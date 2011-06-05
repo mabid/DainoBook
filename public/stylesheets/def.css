@@ -1,0 +1,40 @@
+fieldset {
+margin-bottom: 1em;
+padding: 0.5em;
+}
+form {
+margin: 0;
+padding: 0;
+}
+hr {
+border: 1px solid gray;
+height: 1px;
+}
+img {
+border: 0 none;
+}
+table {
+border-collapse: collapse;
+}
+th {
+border-bottom: 3px solid #CCCCCC;
+padding-right: 1em;
+text-align: left;
+}
+.clear-block:after {
+clear: both;
+content: ".";
+display: block;
+height: 0;
+visibility: hidden;
+}
+.clear-block {
+display: inline-block;
+}
+html .clear-block {
+height: 1%;
+}
+.clear-block {
+display: block;
+}
+

@@ -1,0 +1,290 @@
+.item-list ul li {
+list-style: disc outside none;
+margin: 0 0 0.25em 1.5em;
+padding: 0;
+}
+.form-item {
+margin-bottom: 1em;
+margin-top: 1em;
+}
+tr.odd .form-item, tr.even .form-item {
+margin-bottom: 0;
+margin-top: 0;
+white-space: nowrap;
+}
+tr.merge-down, tr.merge-down td, tr.merge-down th {
+border-bottom-width: 0 !important;
+}
+tr.merge-up, tr.merge-up td, tr.merge-up th {
+border-top-width: 0 !important;
+}
+.form-item input.error, .form-item textarea.error, .form-item select.error {
+border: 2px solid red;
+}
+.form-item .description {
+font-size: 0.85em;
+}
+.form-item label {
+display: block;
+font-weight: bold;
+}
+.form-item label.option {
+display: inline;
+font-weight: normal;
+}
+.form-checkboxes, .form-radios {
+margin: 1em 0;
+}
+.form-checkboxes .form-item, .form-radios .form-item {
+margin-bottom: 0.4em;
+margin-top: 0.4em;
+}
+.marker, .form-required {
+color: #FF0000;
+}
+.more-link {
+text-align: right;
+}
+.more-help-link {
+font-size: 0.85em;
+text-align: right;
+}
+.nowrap {
+white-space: nowrap;
+}
+.pager {
+clear: both;
+text-align: center;
+}
+.pager a, .pager strong.pager-current {
+padding: 0.5em;
+}
+.tips {
+font-size: 0.9em;
+margin-bottom: 0;
+margin-top: 0;
+padding-bottom: 0;
+padding-top: 0;
+}
+dl.multiselect dd.b, dl.multiselect dd.b .form-item, dl.multiselect dd.b select {
+font-family: inherit;
+font-size: inherit;
+width: 14em;
+}
+dl.multiselect dd.a, dl.multiselect dd.a .form-item {
+width: 8em;
+}
+dl.multiselect dt, dl.multiselect dd {
+float: left;
+line-height: 1.75em;
+margin: 0 1em 0 0;
+padding: 0;
+}
+dl.multiselect .form-item {
+height: 1.75em;
+margin: 0;
+}
+.container-inline div, .container-inline label {
+display: inline;
+}
+ul.menu {
+border: medium none;
+list-style: none outside none;
+text-align: left;
+}
+ul.menu li {
+margin: 0 0 0 0.5em;
+}
+li.expanded {
+list-style-image: url("../../misc/menu-expanded.png");
+list-style-type: circle;
+margin: 0;
+padding: 0.2em 0.5em 0 0;
+}
+li.collapsed {
+list-style-image: url("../../misc/menu-collapsed.png");
+list-style-type: disc;
+margin: 0;
+padding: 0.2em 0.5em 0 0;
+}
+li.leaf {
+list-style-image: url("../../misc/menu-leaf.png");
+list-style-type: square;
+margin: 0;
+padding: 0.2em 0.5em 0 0;
+}
+li a.active {
+color: #000000;
+}
+td.menu-disabled {
+background: none repeat scroll 0 0 #CCCCCC;
+}
+ul.links {
+margin: 0;
+padding: 0;
+}
+ul.links.inline {
+display: inline;
+}
+ul.links li {
+display: inline;
+list-style-type: none;
+padding: 0 0.5em;
+}
+.block ul {
+margin: 0;
+padding: 0 0 0.25em 1em;
+}
+ul.primary {
+border-bottom: 1px solid #BBBBBB;
+border-collapse: collapse;
+height: auto;
+line-height: normal;
+list-style: none outside none;
+margin: 5px;
+padding: 0 0 0 1em;
+white-space: nowrap;
+}
+ul.primary li {
+display: inline;
+}
+ul.primary li a {
+background-color: #DDDDDD;
+border-color: #BBBBBB;
+border-style: solid solid none;
+border-width: 1px;
+height: auto;
+margin-right: 0.5em;
+padding: 0 1em;
+text-decoration: none;
+}
+ul.primary li.active a {
+background-color: #FFFFFF;
+border-color: #BBBBBB #BBBBBB #FFFFFF;
+border-style: solid;
+border-width: 1px;
+}
+ul.primary li a:hover {
+background-color: #EEEEEE;
+border-color: #CCCCCC #CCCCCC #EEEEEE;
+}
+ul.secondary {
+border-bottom: 1px solid #BBBBBB;
+margin: 5px;
+padding: 0.5em 1em;
+}
+ul.secondary li {
+border-right: 1px solid #CCCCCC;
+display: inline;
+padding: 0 1em;
+}
+ul.secondary a {
+padding: 0;
+text-decoration: none;
+}
+ul.secondary a.active {
+border-bottom: 4px solid #999999;
+}
+#autocomplete {
+border: 1px solid;
+overflow: hidden;
+position: absolute;
+z-index: 100;
+}
+#autocomplete ul {
+list-style: none outside none;
+margin: 0;
+padding: 0;
+}
+#autocomplete li {
+background: none repeat scroll 0 0 #FFFFFF;
+color: #000000;
+cursor: default;
+white-space: pre;
+}
+#autocomplete li.selected {
+background: none repeat scroll 0 0 #0072B9;
+color: #FFFFFF;
+}
+html.js input.form-autocomplete {
+background-image: url("../../misc/throbber.gif");
+background-position: 100% 2px;
+background-repeat: no-repeat;
+}
+html.js input.throbbing {
+background-position: 100% -18px;
+}
+html.js fieldset.collapsed {
+border-bottom-width: 0;
+border-left-width: 0;
+border-right-width: 0;
+height: 1em;
+margin-bottom: 0;
+}
+html.js fieldset.collapsed * {
+display: none;
+}
+html.js fieldset.collapsed legend {
+display: block;
+}
+html.js fieldset.collapsible legend a {
+background: url("../../misc/menu-expanded.png") no-repeat scroll 5px 75% transparent;
+padding-left: 15px;
+}
+html.js fieldset.collapsed legend a {
+background-image: url("../../misc/menu-collapsed.png");
+background-position: 5px 50%;
+}
+html.js fieldset.collapsed legend, * html.js fieldset.collapsed legend *, * html.js fieldset.collapsed table * {
+display: inline;
+}
+html.js fieldset.collapsible legend a {
+display: block;
+}
+html.js fieldset.collapsible .fieldset-wrapper {
+overflow: auto;
+}
+.resizable-textarea {
+width: 95%;
+}
+.resizable-textarea .grippie {
+background: url("../../misc/grippie.png") no-repeat scroll center 2px #EEEEEE;
+border-color: #DDDDDD;
+border-right: 1px solid #DDDDDD;
+border-style: solid;
+border-width: 0 1px 1px;
+cursor: s-resize;
+height: 9px;
+overflow: hidden;
+}
+html.js .resizable-textarea textarea {
+display: block;
+margin-bottom: 0;
+width: 100%;
+}
+.progress {
+font-weight: bold;
+}
+.progress .bar {
+background: url("../../misc/progress.gif") repeat scroll 0 0 #FFFFFF;
+border: 1px solid #00375A;
+height: 1.5em;
+margin-top: 0.2em;
+}
+.progress .filled {
+background: none repeat scroll 0 0 #0072B9;
+border-bottom: 0.5em solid #004A73;
+height: 1em;
+width: 0;
+}
+.progress .percentage {
+float: right;
+}
+#first-time strong {
+display: block;
+padding: 1.5em 0 0.5em;
+}
+tr.selected td {
+background: none repeat scroll 0 0 #FFFFCC;
+}
+

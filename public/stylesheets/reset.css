@@ -1,0 +1,58 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+border: 0 none;
+font-family: "Lucida Grande",Verdana,Helvetica,Arial,Tahoma,sans-serif;
+font-style: inherit;
+font-weight: inherit;
+margin: 0;
+outline-style: none;
+outline-width: 0;
+padding: 0;
+vertical-align: baseline;
+}
+body {
+background: none repeat scroll 0 50% white;
+color: black;
+line-height: 1;
+}
+ol, ul {
+list-style: none outside none;
+}
+caption, th, td {
+font-weight: normal;
+text-align: left;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+content: "";
+}
+blockquote, q {
+quotes: "" "";
+}
+input, textarea {
+font-family: inherit;
+}
+input[type="text"], input[type="password"], textarea {
+background-color: #FAFAFA;
+border: 2px solid #F0F0F0;
+color: #4C2110;
+font-size: 14px;
+padding: 5px;
+}
+input[type="file"] {
+background-color: #FAFAFA;
+border: 2px solid #F0F0F0;
+color: #4C2110;
+font-size: 12px;
+padding: 5px;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+background-color: #FFFFD4;
+outline: 0 none;
+}
+option {
+font-size: 14px;
+}
+select:focus {
+outline: 0 none;
+}
+input[type="button"], input[type="submit"], input[type="input"] {
+}

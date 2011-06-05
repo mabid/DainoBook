@@ -1,0 +1,75 @@
+/*--------------------------  Css for blue box begin --------------------------*/
+.bbl_content{
+	border-left:solid 1px #acacac;
+	border-right:solid 1px #acacac;
+	/*background-color:#c3ddf3;*/
+	background-color:#fefbe8;
+	padding: 0px 20px 10px 10px;
+	font-size:9pt;
+	font-family: tahoma;
+    color: black;
+}
+.bbl_header{
+	padding: 8px 0px 0px 10px;
+	color:#9c1c1f;
+	font-family:"Verdana";
+	font-size:12px;
+	font-weight:bold;
+}
+/*-------top---------*/
+.bbl_top_bg {background: url(/images/bbl_b_tbg.jpg) 0% 0%;
+	background-repeat:repeat-x;
+	width: 100%;
+	height:25px;
+}
+.bbl_tl {background: url(/images/bbl_b_tl.jpg) 0% 0 no-repeat;height:25px;}
+.bbl_tr {background: url(/images/bbl_b_tr.jpg) 100% 0 no-repeat;height:25px;}
+/*----------bottom----------*/
+.bbl_bot_bg {background: url(/images/bbl_b_bbg.jpg) 0 0%;
+	background-repeat:repeat-x;
+	width: 100%;
+	height:17px;
+
+}
+.bbl_bl {background: url(/images/bbl_b_bl.jpg) 100% 0% no-repeat; height:17px;}
+.bbl_br {background: url(/images/bbl_b_br.jpg) 100% 0 no-repeat; height:17px;}
+/*--------------------------  Css for blue box end --------------------------*/
+
+/*--------------------------  Css for white box begin --------------------------*/
+.wbl_content{
+	border-left:solid 1px #acacac;
+	border-right:solid 1px #acacac;
+	background-color:white;
+	padding: 0px 20px 10px 10px;
+	font-size:12px;
+	font-family: verdana;
+	line-height: 18px;
+    color: black;
+	text-align:left;
+}
+.wbl_header{
+	padding: 8px 0px 0px 10px;
+	color:#9c1c1f;
+	font-family:"Verdana";
+	font-size:12px;
+	font-weight:bold;
+	text-align:left;
+}
+/*-------top---------*/
+.wbl_top_bg {background: url(/images/bbl_w_tbg.jpg) 0% 0%;
+	background-repeat:repeat-x;
+	width: 100%;
+	height:25px;
+}
+.wbl_tl {background: url(/images/bbl_w_tl.jpg) 0% 0 no-repeat;height:25px;}
+.wbl_tr {background: url(/images/bbl_w_tr.jpg) 100% 0 no-repeat;height:25px;}
+/*----------bottom----------*/
+.wbl_bot_bg {background: url(/images/bbl_w_bbg.jpg) 0 0%;
+	background-repeat:repeat-x;
+	width: 100%;
+	height:17px;
+
+}
+.wbl_bl {background: url(/images/bbl_w_bl.jpg) 0% 0% no-repeat; height:17px;padding-bottom:5px;}
+.wbl_br {background: url(/images/bbl_w_br.jpg) 0 0% no-repeat; height:17px;}
+/*--------------------------  Css for white box end --------------------------*/
