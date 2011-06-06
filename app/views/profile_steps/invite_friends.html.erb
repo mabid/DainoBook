@@ -1,0 +1,27 @@
+
+<div style="width: 350px;padding:15px;" id="forms-login" class="notice_blue">
+  <div>
+  <div style="float:left":>
+    <img width="35px" src='/images/gmail.png' />
+  </div>
+  </div>
+  <div>
+
+                  <table>
+                    <tr><td colspan='2'></td></tr>
+                    <tr><th><label for="id_username">Gmail Id</label></th>
+                      <td>
+                        <%= text_field_tag "email"%>
+                      </td>
+                    </tr>
+                    <tr><th><label for="id_password">Password</label></th>
+                      <td>
+                        <%= password_field_tag "password"%>
+                      </td></tr>
+                      <tr><td></td><td><%= submit_tag "Find Friends", :class => "blue-button"%>
+                          <%= link_to "Skip",'/profile_steps/profile_info', :class=>"blue-button" %>
+                      </td></tr>
+
+                  </table>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+nter your Heroku credentials.
+Email: mabid.mahmood@gmail.com
+Password: 
+Found existing public key: /home/aabid/.ssh/bk_rsa.pub
+Would you like to associate it with your Heroku account? [Yn] Y
+Uploading ssh public key /home/aabid/.ssh/bk_rsa.pub
+Creating vivid-leaf-679... done, stack is bamboo-ree-1.8.7
+http://vivid-leaf-679.heroku.com/ | git@heroku.com:vivid-leaf-679.git
+Git remote heroku added
+

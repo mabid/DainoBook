@@ -1,0 +1,21 @@
+#body-login #main .inner {
+background: none repeat scroll 0 0 transparent;
+}
+#body-login #main .inner .left {
+float: left;
+width: 420px;
+}
+#body-login #main .inner .right {
+float: right;
+width: 400px;
+}
+div.form-register, div.form-login, div.form-password {
+margin-bottom: 36px;
+}
+div.form-register .form-item label {
+}
+div.form-register .form-item input, div.form-login .form-item input, div.form-password .form-item input {
+margin-top: 9px;
+width: 300px;
+}
+

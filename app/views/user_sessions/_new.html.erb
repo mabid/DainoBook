@@ -1,0 +1,39 @@
+
+            <div class='notice_blue' id="forms-login" style="width:350px;">
+              <div class='notice_head' id="right-pane-head">
+                <div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
+                  <img src="/images/login_icon.png" width="25px"/>
+                </div>
+
+
+                <h2>Login</h2></div>
+              <div class='notice_body'>
+                <%= form_for @user_session do |f| %>
+                  <ul>
+                    <% @user_session.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                  <table>
+                    <tr><td colspan='2'></td></tr>
+                    <tr><th><label for="id_username">Email</label></th>
+                      <td>
+                        <%= f.text_field :email, :class => "text required email", :style=>"width: 140px;" %>
+                      </td>
+                    </tr>
+                    <tr><th><label for="id_password">Password</label></th>
+                      <td>
+                        <%= f.password_field :password, :class => "text required", :style=>"width: 140px;" %>
+                      </td></tr>
+                    <tr><th><label for="id_remember_me">Remember me</label></th>
+                      <td>
+                        <%= f.check_box :remember_me %>
+                        <br /><span class="help_text">Keep me logged in!</span>
+                      </td></tr>
+                    <tr><td></td><td><%= f.submit "Sign in", :class => "blue-button" %><small><a href='/accounts/forgot/password/'>Forgot password?</a></small></td></tr>
+                  </table>
+                <% end %>
+</div>
+</div>
+</div>
+

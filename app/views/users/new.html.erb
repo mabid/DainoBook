@@ -1,0 +1,88 @@
+
+<table class='n_content' width='100%' cellspacing='0px' cellpadding='2px'>
+  <tr>
+    <td colspan='2'>
+      <div id='new_msg_status' style='display:none;width:350px;' align='center'>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan='2'>
+    </td>
+  </tr>
+  <tr>
+    <td class='left_col'>
+      <div class='notice_blue'>
+        <div class='notice_head'><h2>Signup</h2></div>
+        <div class='notice_body'>
+          <br />
+          <br />
+          Please enter your information below
+          <br />
+
+          <br />
+          <%= form_for @user do |f| %>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+            <table cellspacing='0' cellpadding="0" class="form_tbl">
+              <tr>
+                <th><label for="id_first_name">First name</label></th>
+                <td>
+                  <%= f.text_field :first_name, :class => "text required" %>
+                  <%#*<input id="id_first_name" maxlength="50" type="text" name="first_name" size="35" />%>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_last_name">Last name</label></th>
+                <td>
+                  <%= f.text_field :last_name, :class => "text required" %>
+                  <%#*<input id="id_last_name" maxlength="50" type="text" name="last_name" size="35" />%>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_email">Email</label></th>
+                <td>
+                  <%= f.text_field :email, :class => "text email required" %>
+                  <%#*<input id="id_email" type="text" name="email" size="35" />%>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_email">Password</label></th>
+                <td>
+                  <%= f.password_field :password, :class => "text required" %>
+                  <%#*<input id="id_email" type="text" name="email" size="35" />%>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_email">Confirm Password</label></th>
+                <td>
+                  <%= f.password_field :password_confirmation, :class => "text required" %>
+                  <%#*<input id="id_email" type="text" name="email" size="35" />%>
+                </td>
+              </tr>
+              <tr>
+                <td colspan='2'>
+                  <%= f.submit "Sign up", :class => "blue-button" %>
+                  <%#*<input type='submit' value='Submit'></input>%>
+                </td>
+              </tr>
+            </table>
+          <% end %>
+        </div>
+      </div>
+    </td>
+    <td class='right_col'>
+      <div class='notice_blue' id='steps'>
+        <div class='notice_head' id="right-pane-head"><h2>As simple as 1-2-3</h2></div>
+        <ol>
+          <li> <a href="dainosignup1.html"> Find Friends </a> </li>
+          <li> <a href="dainosignup2.html"> Profile Info </a> </li>
+          <li> <a href="dainosignup3.html"> Upload Photo </a> </li>
+        </ol>
+      </div>
+    </td>
+  </tr>
+</table>
