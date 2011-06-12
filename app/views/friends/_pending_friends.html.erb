@@ -1,0 +1,44 @@
+<script type="text/javascript">
+ $(document).ready(function() {
+	$(".accept-request").click(function(event){
+		event.preventDefault();
+		$.ajax({
+			url: this.href,
+			type: "PUT",
+			complete: function(){
+		document.location = '<%= user_friends_path %>';
+			}
+		});
+		}
+	);
+	$(".reject-request").click(function(event){
+		event.preventDefault();
+		$.ajax({
+			url: this.href,
+			type: "DELETE",
+			complete: function(){
+		document.location = '<%= user_friends_path %>';
+			}
+		});
+		}
+	);
+ });
+
+</script>
+<% unless @user.pending_friends.empty? %>
+<div style="float:left;">
+<% @user.pending_friends.each do |u| %>
+  <div style="width:200;float:left;">
+<%= image_tag u.profile_picture.url(:small) %>
+<div>
+	<strong><%= u.full_name %> </strong> <br/>
+	Since <%= u.created_at.to_s(:long) %>
+</div>
+<%= link_to '[Accept]', user_friend_path(:user_id => current_user, :id => u), :class => "accept-request", :method => :put, :confirm => 'Accept friend request! Are you sure?' %> |
+<%= link_to '[Reject]', user_friend_path(:user_id => current_user, :id => u), :class => "reject-request", :method => :delete, :confirm => 'Reject friend request! Are you sure?' %>
+	</div>
+<% end %>
+	</div>
+<% else %>
+None
+<% end %>

@@ -1,0 +1,35 @@
+<div class='notice_blue' id="forms-login" style="width:350px;">
+	<div class='notice_head' id="right-pane-head">
+		<div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
+		</div>
+
+		<h2>Activities and interests</h2></div>
+	<div class='notice_body'>
+		<%= form_for(@user) do |f| %>
+			<ul>
+				<% @user.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+			<table>
+				<tr><td colspan='2'></td></tr>
+				<tr><th><label for="id_username">Activities</label></th>
+					<td>
+						<%= f.text_field :activities, :class => "text required email", :style=>"width: 140px;" %>
+					</td>
+				</tr>
+				<tr><th><label for="id_password">Interests</label></th>
+					<td>
+						<%= f.text_field :interests, :class => "text required", :style=>"width: 140px;" %>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><%= f.submit "Save", :class => "blue-button" %>
+					</td>
+				</tr>
+
+			</table>
+		<% end %>
+	</div>
+</div>

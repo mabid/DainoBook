@@ -1,0 +1,19 @@
+<% form_tag :action => 'import', :id => @user do %>
+
+	<select name="from" id="from">
+		<option value="">Select Id</option>
+		<option value="gmail">Gmail</option>
+		<option value="yahoo">Yahoo</option>
+		<option value="hotmail">Hotmail</option>
+	</select>
+
+	<BR />
+	<p>Please Enter Your Email Address Below : <BR />
+	<input type="text" name="login"></p>
+	<p>Enter Your Password :<BR />
+	<input type="password" name="password"></p>
+
+	<p><h4>Note : we are not going to save your Password anywhere </h4></p>
+	<p><%= submit_tag 'Find My Friends' %>
+
+<% end %>

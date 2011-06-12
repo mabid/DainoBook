@@ -117,13 +117,14 @@
 		</style>
 
 	</head>
-	<%= javascript_include_tag "scriptaculous.bundle.min.js" %>
-	<%= javascript_include_tag "custom" %>
-	<%= javascript_include_tag "unitpngfix" %>
-	<%= javascript_include_tag "facebox" %>
+	<%# javascript_include_tag "scriptaculous.bundle.min.js" %>
+	<%= javascript_include_tag "jquery" %>
+	<%# javascript_include_tag "custom" %>
+	<%# javascript_include_tag "unitpngfix" %>
+	<%# javascript_include_tag "facebox" %>
 
 	<script type='text/javascript'>
-		var title = document.title;
+		/*var title = document.title;
 		Event.observe(window, 'load', function()
 				{
 				$$(".tip_inline").each(function(e){ inline_tip(e, e.readAttribute('tip'));});
@@ -131,7 +132,7 @@
 				{
 				$$(".toggle .controls").each(function(e){ e.setStyle( {margin:'0 19 0 0'} ); });
 				}
-				});
+				});*/
 
 </script>
 
@@ -140,11 +141,17 @@
 		<div class="header">
     <div id="nav" style="float:right;padding-top:10px;">
       <% unless logged_in? %>
+
         <%= link_to "Register", new_user_path%>
         <%= link_to "Login", :login %>
       <% end%>
       <% if logged_in? %>
+        <%= link_to "Home", :user_root%>
         <%= link_to "Logout", :logout%>
+        <%= link_to "My Friends", user_friends_path(current_user) %>
+        <%= link_to "Add People", '/search/people' %>
+        <%= link_to "Edit Profile", :edit_profile %>
+        <%= link_to "Find Friends", :invite_friends%>
       <% end %>
     </div>
 			<div class="headerimg lnkimg">

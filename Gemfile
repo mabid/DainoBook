@@ -8,6 +8,9 @@ gem 'rails', '3.0.5'
 gem 'mysql'
 gem 'authlogic'
 gem 'paperclip'
+gem 'hpricot'
+gem 'contacts'
+#gem "contacts_rails",:git => "git://github.com/dcrec1/contacts_rails.git"
 
 # Use unicorn as the web server
 # gem 'unicorn'

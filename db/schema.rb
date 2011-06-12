@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110604164345) do
+ActiveRecord::Schema.define(:version => 20110612193447) do
+
+  create_table "friendships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -26,6 +34,43 @@ ActiveRecord::Schema.define(:version => 20110604164345) do
     t.string   "profile_picture_file_name"
     t.string   "profile_picture_content_type"
     t.integer  "profile_picture_file_size"
+    t.string   "basic_current_city"
+    t.string   "baisc_Info_home_town"
+    t.string   "basic_info_gender"
+    t.boolean  "basic_info_show_gender_in_profile"
+    t.date     "basic_info_birthday"
+    t.boolean  "basic_info_show_birthday_in_profile"
+    t.string   "basic_info_interested_in"
+    t.string   "basic_info_about_me"
+    t.string   "relationship_status"
+    t.string   "relative_name"
+    t.string   "friends"
+    t.string   "employer"
+    t.string   "college_university"
+    t.string   "high_school"
+    t.string   "religion"
+    t.string   "religion_description"
+    t.string   "political_views"
+    t.string   "political_views_description"
+    t.string   "people_inspired_by"
+    t.string   "favorite_quotations"
+    t.string   "music"
+    t.string   "books"
+    t.string   "movies"
+    t.string   "television"
+    t.string   "games"
+    t.string   "sports_played"
+    t.string   "favorite_team"
+    t.string   "favorite_athletes"
+    t.string   "activities"
+    t.string   "interests"
+    t.string   "im_screen_name"
+    t.string   "phones"
+    t.string   "address"
+    t.string   "city_town"
+    t.string   "zip"
+    t.string   "neighborhood"
+    t.string   "website"
   end
 
 end

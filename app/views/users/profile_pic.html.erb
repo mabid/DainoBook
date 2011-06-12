@@ -1,0 +1,33 @@
+<div class='notice_blue' id="forms-login" style="width:350px;">
+	<div class='notice_head' id="right-pane-head">
+		<div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
+		</div>
+
+
+		<h2>Profile Picture</h2></div>
+	<div class='notice_body'>
+		<div >
+	<%= image_tag current_user.profile_picture.url(:small) %>
+	</div>
+		<%= form_for @user, :html => { :multipart => true } do |f| %>
+			<ul>
+				<% @user.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+			<table>
+				<tr><td colspan='2'></td></tr>
+				<tr><th><label for="id_username">Select </label></th>
+					<td>
+						<%= f.file_field :profile_picture %>
+					</td>
+				</tr>
+				<tr><td></td><td><%= f.submit "Save", :class => "blue-button" %>
+				</td></tr>
+			</table>
+		<% end %>
+	</div>
+</div>
+</div>
+
+

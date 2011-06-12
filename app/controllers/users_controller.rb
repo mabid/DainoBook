@@ -11,6 +11,30 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def basic_info
+    @user = current_user
+  end
+
+  def profile_pic 
+    @user = current_user
+  end
+
+  def activities_interests
+    @user = current_user
+  end
+
+  def contact_info
+    @user = current_user
+  end
+
+  def education_work 
+    @user = current_user
+  end
+	
+  def sports
+    @user = current_user
+  end
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -20,6 +44,10 @@ class UsersController < ApplicationController
       render :action => :new
     end
   end
+
+	def edit_profile
+		
+	end
   
   def update
     check = params[:user]
@@ -27,15 +55,21 @@ class UsersController < ApplicationController
       @user = current_user
       if(check[:profile_picture])
          redirect_to root_url and return 
-      else
+			elsif (check[:location])
         render '/profile_steps/profile_picture' and return
+			else
+					flash[:notice] = "Update Successfull"
+         redirect_to root_url and return 
       end
     else 
       if(check[:profile_picture])
          @user = current_user
         render '/profile_steps/profile_picture' and return
-      else
+			elsif (check[:location])
         render '/profile_steps/profile_info' and return
+			else
+					flash[:notice] = "Failed some error Occured"
+         redirect_to root_url and return 
       end
     end
   end
