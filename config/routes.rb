@@ -5,6 +5,7 @@ Facebook::Application.routes.draw do |map|
 	end
 
 	resources :user_sessions
+  resources :user_sessions
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   root :to => "pages#index"
@@ -25,5 +26,8 @@ Facebook::Application.routes.draw do |map|
 	map.import_google '/import/google',   :controller => "import_contacts", :action => 'import_google_contacts'
 	map.import_live   '/import/live',     :controller => "import_contacts", :action => 'import_live_contacts'
 	map.import_yahoo  '/import/yahoo',    :controller => "import_contacts", :action => 'import_yahoo_contacts'
+
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 
 end
