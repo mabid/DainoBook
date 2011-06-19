@@ -1,0 +1,55 @@
+<table class='n_content' width='100%' cellspacing='0px' cellpadding='2px'>
+  <tr>
+    <td colspan='2'>
+      <div id='new_msg_status' style='display:none;width:350px;' align='center'>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan='2'>
+    </td>
+  </tr>
+  <tr>
+    <td class='left_col'>
+      <div class='notice_blue'>
+        <div class='notice_head'><h2>Upload A photo</h2></div>
+        <div class='notice_body'>
+          <br />
+          <br />
+          Please enter photo information below
+          <br />
+
+          <br />
+          <%= form_for([:user, :album, @photo], :html => { :multipart => true }) do |f| %>
+            <ul>
+              <% @photo.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+            <table cellspacing='0' cellpadding="0" class="form_tbl">
+              <tr>
+                <th><label for="id_first_name">Choose : </label></th>
+                <td>
+                  <%= f.file_field :picture, :class => "text required" %>
+                  <%#*<input id="id_first_name" maxlength="50" type="text" name="first_name" size="35" />%>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_last_name">Caption</label></th>
+                <td>
+                  <%= f.text_field :caption, :class => "text required" %>
+                  <%#*<input id="id_last_name" maxlength="50" type="text" name="last_name" size="35" />%>
+                </td>
+              </tr>
+              <tr>
+                <td colspan='2'>
+                  <%= f.submit "Upload", :class => "blue-button" %>
+                </td>
+              </tr>
+            </table>
+          <% end %>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>

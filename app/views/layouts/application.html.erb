@@ -6,6 +6,8 @@
     <%= stylesheet_link_tag "base" %>
     <%= stylesheet_link_tag "facebox" %>
 
+   <link media="screen" type="text/css" href="/photo-tag/libraries/jquery-ui-1.8.11.custom.css" rel="stylesheet">  
+   <link media="screen" type="text/css" href="/photo-tag/tests/photo_tags/styles2.css" rel="stylesheet">  
     <style type="text/css" >
 
       #forms-main {
@@ -123,6 +125,8 @@
 <%# javascript_include_tag "unitpngfix" %>
 <%# javascript_include_tag "facebox" %>
 
+   <script type="text/javascript" src="/photo-tag/libraries/jquery.ui.1.8.11.js"></script>  
+   <script type="text/javascript" src="/photo-tag/js/jquery.phototag.js?ver=1"></script>  
   <script type='text/javascript'>
     /*var title = document.title;
           Event.observe(window, 'load', function()
@@ -151,6 +155,7 @@
             <%= link_to "Add People", '/search/people' %>
             <%= link_to "Edit Profile", :edit_profile %>
             <%= link_to "Find Friends", :invite_friends%>
+        <%= link_to "Photos", :user_photos%>
             <%= link_to "Logout", :logout%>
           <% end %>
         </div>

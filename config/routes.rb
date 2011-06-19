@@ -1,7 +1,11 @@
 Facebook::Application.routes.draw do |map|
 
 	resources :users do
+		map.user_photos 'user_photos', :controller => 'albums', :action => 'index'
 		resources :friends
+		resources :albums do
+			resources :photos
+		end
 	end
 
 	resources :user_sessions
