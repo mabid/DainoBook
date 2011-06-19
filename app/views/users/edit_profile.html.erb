@@ -1,16 +1,3 @@
-<%= link_to "Basic Info", :basic_info%> 
-<br />
-<br />
-	<%= link_to "Activities/Interests", :activities_interests%>
-<br />
-<br />
-	<%= link_to "Contact Info", :contact_info%>
-<br />
-<br />
-	<%= link_to "Education Work", :education_work%>
-<br />
-<br />
-	<%= link_to "Sports", :sports%>
-<br />
-<br />
-	<%= link_to "Edit Profile Picture", :profile_pic%>
+<% content_for :sidebar do %>
+	<%= render 'users/edit_profile_sections'%>
+<% end %>

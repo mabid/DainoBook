@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  layout "layout_gen", :only => :new
+  before_filter :require_user, :except => [:new, :create]
 
   def index
     render :text => "action not permitted"

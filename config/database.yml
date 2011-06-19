@@ -1,5 +1,5 @@
 development:
-  adapter: mysql
+  adapter: sqlite3
   encoding: utf8
   reconnect: false
   database: facebook_development
@@ -9,7 +9,7 @@ development:
   host: localhost
 
 production:
-  adapter: mysql
+  adapter: sqlite3
   encoding: utf8
   reconnect: false
   database: facebook_production

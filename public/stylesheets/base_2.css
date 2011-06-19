@@ -6,8 +6,9 @@ body {
 }
 
 .mbody {
-    background-color: #12212D;
-    background-image: url("/images/body_bg.gif");
+    /* background-color: #12212D; */
+   background-color: #BBBBBB;
+    /* background-image: url("/images/body_bg.gif"); */
     background-repeat: repeat-x;
 }
 
@@ -22,7 +23,7 @@ header li {
 
 header nav a {
 	color: #607890;
-	font-size: 24px;
+	font-size: 14px;
 	font-weight: bold;
 	padding: 4px 10px;
 	margin: 0 0 0 5px;
