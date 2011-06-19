@@ -1,0 +1,96 @@
+/*
+ * Author: Sharjeel Ahmed Qureshi
+ */
+body {
+/*	background-color: #BBBBBB;*/
+}
+
+.mbody {
+    background-color: #12212D;
+    background-image: url("/images/body_bg.gif");
+    background-repeat: repeat-x;
+}
+
+header {
+	background: none repeat scroll 0 0 #12212d;
+	padding: 15px 0 0 0;
+}
+
+header li {
+	float: left;
+}
+
+header nav a {
+	color: #607890;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 4px 10px;
+	margin: 0 0 0 5px;
+	float: left;
+	overflow: visible;
+	/* -moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px; */
+	text-decoration:  none;
+}
+
+header nav a:visited {
+	color: #607890;
+}
+
+header nav a:hover {
+	color: #FFF;
+}
+
+a.mainnav-selected{
+	background-color: #333333;
+}
+
+footer {
+background: none repeat scroll 0 0 #12212d;
+padding: 15px 0;	
+}
+form p { position:relative }
+
+#main {
+	/*
+	margin-bottom: 20px;
+	margin-top: 20px;
+	*/
+	font-size: 100%;		
+}
+
+#sidebar {
+	background-color: #AAAAAA;
+	padding: 10px 0;
+}
+
+
+#sidebar ul
+{    
+	list-style: none;
+	font-weight: bold;
+}
+
+/*
+#sidebar div
+{
+	margin-top: 20px;
+	margin-bottom: 20px;	
+}
+*/
+
+
+#mainpane {
+	padding: 10px 0;
+}
+
+.sectitle {
+	color: #888888;
+	font-size: 10px;
+}
+
+.feeditem {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

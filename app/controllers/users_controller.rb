@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
 
+  layout "layout_gen", :only => :new
+
   def index
-    render :text => "action not permitted L par charho"
+    render :text => "action not permitted"
   end
   
   def home

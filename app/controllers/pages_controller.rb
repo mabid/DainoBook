@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  layout "layout_main"
 
   def index
     if current_user

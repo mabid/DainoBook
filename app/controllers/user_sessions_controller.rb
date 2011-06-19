@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  
+  layout "layout_gen", :only => :new
   def new
     @user_session = UserSession.new
   end
