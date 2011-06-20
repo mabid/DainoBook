@@ -73,9 +73,10 @@
 					</a> 
 				</div>
 				<% if not current_user %>
+                                <!--
 				<div class="grid_8" id="signin" >
 				
-                    <form action="/user_sessions/"  method="post">
+                                    <form action="/user_sessions/"  method="post">
 						<fieldset class="credentials">
 							<div align="left">
 								<input id="username" type="text" autocomplete="on" placeholder="Username" name="user_session[email]" />
@@ -85,16 +86,18 @@
 						</fieldset>
 				    </form>
 				</div>
+                                -->
 				<% else %>
 				<div class="grid_8">
 					<nav>
 						<ul>
-							<li> <%= link_to "Profile", user_friends_path(current_user) %> </li>
-							<li> <%= link_to "Edit", :edit_profile %> </li>
-				            <li> <%= link_to "Friends", user_friends_path(current_user) %> </li>
-				            <li> <%= link_to "Search", '/search/people' %> </li>
-				            <li> <%= link_to "Invite Friends", :invite_friends%> </li>
-				            <li> <%= link_to "Logout", :logout%> </li>
+							<li> <%= link_to "Profile", user_friends_path(current_user) , :class => is_mainnav_active?(user_friends_path(current_user) ) %> </li>
+							<%#*<li> <%= link_to "Edit", :edit_profile , :class => is_mainnav_active?(:edit_profile)%> </li>%>
+                                                        <li> <%= link_to "Edit", :basic_info , :class => is_mainnav_active?(:edit_profile)%> </li>
+                                                        <li> <%= link_to "Friends", user_friends_path(current_user) %> </li>
+                                                        <li> <%= link_to "Search", '/search/people' %> </li>
+                                                        <li> <%= link_to "Invite Friends", :invite_friends%> </li>
+                                                        <li> <%= link_to "Logout", :logout%> </li>
 						</ul>
 					</nav>
 				</div>

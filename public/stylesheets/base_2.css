@@ -58,7 +58,10 @@ form p { position:relative }
 	margin-bottom: 20px;
 	margin-top: 20px;
 	*/
-	font-size: 100%;		
+        font-size: 100%;
+        min-height:350px;
+        height:auto !important;
+        height:350px;
 }
 
 #sidebar {

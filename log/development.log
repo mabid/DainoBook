@@ -28459,3 +28459,2758 @@ AbstractController::ActionNotFound (The action 'images' could not be found for S
   
 
 Rendered /home/sharjeel/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (1.1ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aliadnan/DainoBook/config/routes.rb:1)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110531043534)
+Migrating to AddFieldsToUser (20110531045330)
+Migrating to AddProfileFieldsToUser (20110604131955)
+Migrating to AddProfilePictureToUser (20110604164345)
+Migrating to CreateFriendships (20110612141211)
+Migrating to AddProfileToUser (20110612193447)
+  [1m[35mSQL (12.8ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("friendships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aliadnan/DainoBook/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 08:47:14 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (5.9ms)
+Rendered pages/index.html.erb within layouts/main_page (84.7ms)
+Completed 200 OK in 791ms (Views: 88.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-20 08:48:32 +0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WMlc+Cg/nsIqveNhnk3Wnv9EcDqfQBH5L/+9zhl+aGo=", "user"=>{"first_name"=>"Ali", "last_name"=>"Adnan", "email"=>"aliadnan1984@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (3.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('aliadnan1984@gmail.com')) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'b229255f122560d9be5fb80e813e791d39756cd375a3c8db1abc5ba0735c8f85269209bcc143fb0eed1f5859f2c07547f71119923904cad3f856a4e3a1668d7a') LIMIT 1[0m
+Rendered users/new.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 829ms (Views: 41.2ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-20 08:48:50 +0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WMlc+Cg/nsIqveNhnk3Wnv9EcDqfQBH5L/+9zhl+aGo=", "user"=>{"first_name"=>"Ali", "last_name"=>"Adnan", "email"=>"aliadnan1984@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('aliadnan1984@gmail.com')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291') LIMIT 1[0m
+  [1m[35mAREL (33.8ms)[0m  INSERT INTO "users" ("email", "crypted_password", "password_salt", "persistence_token", "created_at", "updated_at", "first_name", "last_name", "location", "phone", "profile_picture_file_name", "profile_picture_content_type", "profile_picture_file_size", "basic_current_city", "baisc_Info_home_town", "basic_info_gender", "basic_info_show_gender_in_profile", "basic_info_birthday", "basic_info_show_birthday_in_profile", "basic_info_interested_in", "basic_info_about_me", "relationship_status", "relative_name", "friends", "employer", "college_university", "high_school", "religion", "religion_description", "political_views", "political_views_description", "people_inspired_by", "favorite_quotations", "music", "books", "movies", "television", "games", "sports_played", "favorite_team", "favorite_athletes", "activities", "interests", "im_screen_name", "phones", "address", "city_town", "zip", "neighborhood", "website") VALUES ('aliadnan1984@gmail.com', 'a58dd757a5f2906ef69ed5aa9754df6bb9bd1cc16add3ec75cec5f1ffb650edd9ab60554e43da3c870605120dd0912fa0e5e0163c58f0c4976fba141622d19a6', 'GIAuCShrH7YA7J1xjNz8', '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291', '2011-06-20 03:48:51.183856', '2011-06-20 03:48:51.183856', 'Ali', 'Adnan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/profile_steps/invite_friends
+Completed 302 Found in 690ms
+
+
+Started GET "/profile_steps/invite_friends" for 127.0.0.1 at 2011-06-20 08:48:51 +0500
+  Processing by ProfileStepsController#invite_friends as HTML
+  [1m[36mUser Load (57.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+Rendered profile_steps/invite_friends.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 341ms (Views: 13.4ms | ActiveRecord: 57.3ms)
+
+
+Started GET "/profile_steps/images/favicon.ico" for 127.0.0.1 at 2011-06-20 08:48:51 +0500
+
+AbstractController::ActionNotFound (The action 'images' could not be found for ProfileStepsController):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (5.2ms)
+
+
+Started GET "/profile_steps/images/favicon.ico" for 127.0.0.1 at 2011-06-20 08:48:55 +0500
+
+AbstractController::ActionNotFound (The action 'images' could not be found for ProfileStepsController):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (4.8ms)
+
+
+Started GET "/profile_steps/profile_info" for 127.0.0.1 at 2011-06-20 08:48:59 +0500
+  Processing by ProfileStepsController#profile_info as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1[0m
+  [1m[35mUser Load (10.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered profile_steps/profile_info.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 429ms (Views: 24.8ms | ActiveRecord: 20.1ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at 2011-06-20 08:49:25 +0500
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WMlc+Cg/nsIqveNhnk3Wnv9EcDqfQBH5L/+9zhl+aGo=", "user"=>{"location"=>"Lahore, Pakistan", "phone"=>"03004362854"}, "commit"=>"Next", "id"=>"3"}
+  [1m[36mUser Load (14.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1[0m
+  [1m[35mUser Load (13.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (0.6ms)[0m  [1mUPDATE "users" SET "location" = 'Lahore, Pakistan', "phone" = '03004362854', "updated_at" = '2011-06-20 03:49:26.468278' WHERE "users"."id" = 3[0m
+[paperclip] Saving attachments.
+Rendered profile_steps/profile_picture.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 682ms (Views: 19.4ms | ActiveRecord: 29.0ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at 2011-06-20 08:50:52 +0500
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WMlc+Cg/nsIqveNhnk3Wnv9EcDqfQBH5L/+9zhl+aGo=", "user"=>{"profile_picture"=>#<ActionDispatch::Http::UploadedFile:0x9d3788c @original_filename="AzadiPic.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[profile_picture]\"; filename=\"AzadiPic.png\"\r\nContent-Type: image/png\r\n", @tempfile=#<File:/tmp/RackMultipart20110620-3022-9h0xlh>>}, "commit"=>"Next", "id"=>"3"}
+  [1m[35mUser Load (70.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+  [1m[36mUser Load (10.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+[paperclip] identify -format %wx%h '/tmp/stream20110620-3022-1xgbg1b.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110620-3022-1xgbg1b.png[0]' -resize "100x" -crop "100x100+0+0" +repage '/tmp/stream20110620-3022-1xgbg1b20110620-3022-17o0nza' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20110620-3022-1xgbg1b.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110620-3022-1xgbg1b.png[0]' -resize "150x150>" '/tmp/stream20110620-3022-1xgbg1b20110620-3022-wfdb78' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20110620-3022-1xgbg1b.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110620-3022-1xgbg1b.png[0]' '/tmp/stream20110620-3022-1xgbg1b20110620-3022-14urt2b' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20110620-3022-1xgbg1b.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110620-3022-1xgbg1b.png[0]' '/tmp/stream20110620-3022-1xgbg1b20110620-3022-dimin5' 2>/dev/null
+  [1m[35mAREL (1.8ms)[0m  UPDATE "users" SET "profile_picture_file_name" = 'AzadiPic.png', "profile_picture_content_type" = 'image/png', "profile_picture_file_size" = 71112, "updated_at" = '2011-06-20 03:50:54.044021' WHERE "users"."id" = 3
+[paperclip] Saving attachments.
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/3/original/AzadiPic.png
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/3/thumb/AzadiPic.png
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/3/small/AzadiPic.png
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/3/url/AzadiPic.png
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/3/default_url/AzadiPic.png
+Redirected to http://localhost:3000/
+Completed 302 Found in 1779ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 08:50:54 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (11.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1[0m
+  [1m[35mUser Load (19.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 444ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 08:50:54 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (15.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1[0m
+  [1m[35mUser Load (11.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/home.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 470ms (Views: 24.5ms | ActiveRecord: 140.3ms)
+
+
+Started GET "/users/3/friends" for 127.0.0.1 at 2011-06-20 08:51:16 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (18.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (15.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 3) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (352.5ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 3) AND ((status = 'requested')))[0m
+Rendered friends/_requested_friends.html.erb (12.8ms)
+  [1m[35mSQL (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 3) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (18.2ms)
+  [1m[36mUser Load (13.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered friends/index.html.erb within layouts/application (460.8ms)
+Completed 200 OK in 922ms (Views: 446.3ms | ActiveRecord: 49.1ms)
+
+
+Started GET "/users/3/images/favicon.ico" for 127.0.0.1 at 2011-06-20 08:51:18 +0500
+
+ActionController::RoutingError (No route matches "/users/3/images/favicon.ico"):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (19.3ms)
+
+
+Started GET "/users/3/images/favicon.ico" for 127.0.0.1 at 2011-06-20 08:51:21 +0500
+
+ActionController::RoutingError (No route matches "/users/3/images/favicon.ico"):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/search/people" for 127.0.0.1 at 2011-06-20 08:51:27 +0500
+  Processing by SearchController#people as HTML
+  [1m[36mUser Load (19.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1[0m
+  [1m[35mUser Load (90.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mUser Load (36.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (4.1ms)[0m  SELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 1 AND (("friendships".user_id = 3) AND ((status = 'requested'))) ORDER BY created_at LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 1 AND (("friendships".user_id = 3) AND ((status = 'accepted'))) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 1 AND (("friendships".user_id = 3) AND ((status = 'pending'))) ORDER BY created_at LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_search_people_html_erb___704601372_82875860_552072689 at /home/aliadnan/DainoBook/app/views/search/people.html.erb:11)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 2 AND (("friendships".user_id = 3) AND ((status = 'requested'))) ORDER BY created_at LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 2 AND (("friendships".user_id = 3) AND ((status = 'accepted'))) LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 2 AND (("friendships".user_id = 3) AND ((status = 'pending'))) ORDER BY created_at LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_search_people_html_erb___704601372_82875860_552072689 at /home/aliadnan/DainoBook/app/views/search/people.html.erb:11)
+Rendered search/people.html.erb within layouts/application (120.6ms)
+Completed 200 OK in 953ms (Views: 122.4ms | ActiveRecord: 154.9ms)
+
+
+Started GET "/search/images/favicon.ico" for 127.0.0.1 at 2011-06-20 08:51:28 +0500
+
+AbstractController::ActionNotFound (The action 'images' could not be found for SearchController):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (1.7ms)
+
+
+Started GET "/search/images/favicon.ico" for 127.0.0.1 at 2011-06-20 08:51:31 +0500
+
+AbstractController::ActionNotFound (The action 'images' could not be found for SearchController):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (3.4ms)
+
+
+Started GET "/invite_friends" for 127.0.0.1 at 2011-06-20 08:51:43 +0500
+  Processing by ImportContactsController#invite_friends as HTML
+  [1m[35mUser Load (18.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+  [1m[36mUser Load (18.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_import_contacts_invite_friends_html_erb__56006961_81628660_552072689 at /home/aliadnan/DainoBook/app/views/import_contacts/invite_friends.html.erb:1)
+Rendered import_contacts/invite_friends.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 672ms (Views: 31.1ms | ActiveRecord: 36.8ms)
+
+
+Started GET "/users/3/friends" for 127.0.0.1 at 2011-06-20 08:55:40 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35mUser Load (16.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 3) AND ((status = 'accepted')))[0m
+Rendered friends/_friends.html.erb (277.3ms)
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 3) AND ((status = 'requested')))
+Rendered friends/_requested_friends.html.erb (19.1ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 3) AND ((status = 'pending')))[0m
+Rendered friends/_pending_friends.html.erb (25.0ms)
+  [1m[35mUser Load (25.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered friends/index.html.erb within layouts/application (412.9ms)
+Completed 200 OK in 798ms (Views: 400.3ms | ActiveRecord: 44.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 08:55:45 +0500
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (10.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+  [1m[36mUser Load (14.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 471ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 08:55:46 +0500
+  Processing by UsersController#home as HTML
+  [1m[35mUser Load (69.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+  [1m[36mUser Load (12.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/home.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 397ms (Views: 18.7ms | ActiveRecord: 81.9ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aliadnan/DainoBook/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:05:06 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (66.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+  [1m[36mUser Load (20.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 1100ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:05:07 +0500
+  Processing by UsersController#home as HTML
+  [1m[35mUser Load (15.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+  [1m[36mUser Load (12.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/home.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 413ms (Views: 17.5ms | ActiveRecord: 115.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-06-20 09:05:11 +0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (23.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '4bf7b7e0db1461aa008a1406f2d64fc28307cc7494e3a64d9d4632b9792d1aa29d4bbcde099b5283bd5722f82836a6d22182bea87903893418fb79bfb365a291' LIMIT 1
+  [1m[36mUser Load (17.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 635ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:05:12 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (10.0ms)
+Rendered pages/index.html.erb within layouts/main_page (245.3ms)
+Completed 200 OK in 545ms (Views: 253.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:05:34 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"aliadnan1984@gmail.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (6.9ms)
+Rendered pages/index.html.erb within layouts/main_page (87.5ms)
+Completed 200 OK in 349ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:05:42 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"aliadnan1984@gmail.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (15.8ms)
+Rendered pages/index.html.erb within layouts/main_page (114.5ms)
+Completed 200 OK in 369ms (Views: 125.7ms | ActiveRecord: 40.8ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:05:49 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"aliadnan1984@gmail.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (10.4ms)
+Rendered pages/index.html.erb within layouts/main_page (238.0ms)
+Completed 200 OK in 633ms (Views: 246.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-20 09:06:03 +0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P3rza19SvHm6oAS7fI8nisgQzDHwum+Vw+lMqnqSuvE=", "user"=>{"first_name"=>"Ali", "last_name"=>"Adnan", "email"=>"ali@ali.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35mUser Load (3.3ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('ali@ali.com')) LIMIT 1
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'b95627625cee159998025616fba6bc103cb50f3d3570ecbdd80a31f762823370a642543c54d4760274b91923afb87332dba3f11d38e41cb47bf2e656be25737a') LIMIT 1[0m
+Rendered users/new.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 809ms (Views: 87.6ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-20 09:06:07 +0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P3rza19SvHm6oAS7fI8nisgQzDHwum+Vw+lMqnqSuvE=", "user"=>{"first_name"=>"Ali", "last_name"=>"Adnan", "email"=>"ali@ali.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('ali@ali.com')) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '6118e09c14002c1822c1a8245fc32aca3b8f16a52a1a671af275e8b81ff5b3fe0444ddb41ccbc122627bacb82772ddd4e90ba5b9c577b7da932c636290cda501') LIMIT 1[0m
+Rendered users/new.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 713ms (Views: 73.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-20 09:06:12 +0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P3rza19SvHm6oAS7fI8nisgQzDHwum+Vw+lMqnqSuvE=", "user"=>{"first_name"=>"Ali", "last_name"=>"Adnan", "email"=>"ali@ali.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (3.8ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('ali@ali.com')) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '181584e22d109e522586899450b9822d4a0da4ce1e2ad8f0e59bf50235dc03e4655db138bfd4a3bd3861d54356269f0b8305550ec20374abfccb0e33df76fe76') LIMIT 1[0m
+Rendered users/new.html.erb within layouts/application (64.6ms)
+Completed 200 OK in 741ms (Views: 78.8ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-20 09:06:26 +0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P3rza19SvHm6oAS7fI8nisgQzDHwum+Vw+lMqnqSuvE=", "user"=>{"first_name"=>"Ali", "last_name"=>"Adnan", "email"=>"ali@ali.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (3.4ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('ali@ali.com')) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e') LIMIT 1[0m
+  [1m[35mAREL (1.3ms)[0m  INSERT INTO "users" ("email", "crypted_password", "password_salt", "persistence_token", "created_at", "updated_at", "first_name", "last_name", "location", "phone", "profile_picture_file_name", "profile_picture_content_type", "profile_picture_file_size", "basic_current_city", "baisc_Info_home_town", "basic_info_gender", "basic_info_show_gender_in_profile", "basic_info_birthday", "basic_info_show_birthday_in_profile", "basic_info_interested_in", "basic_info_about_me", "relationship_status", "relative_name", "friends", "employer", "college_university", "high_school", "religion", "religion_description", "political_views", "political_views_description", "people_inspired_by", "favorite_quotations", "music", "books", "movies", "television", "games", "sports_played", "favorite_team", "favorite_athletes", "activities", "interests", "im_screen_name", "phones", "address", "city_town", "zip", "neighborhood", "website") VALUES ('ali@ali.com', 'f14fa51b759ef3658d6338fc8c0173d5cb1596135d1cd5cfcc5af776191acb0bbe1537d635a0241e849517dc18dcc33aaeefdc194422703d7cdf2cd5e5ae66f3', 'gmYLO0WizahdgsepW', 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e', '2011-06-20 04:06:26.672360', '2011-06-20 04:06:26.672360', 'Ali', 'Adnan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/profile_steps/invite_friends
+Completed 302 Found in 690ms
+
+
+Started GET "/profile_steps/invite_friends" for 127.0.0.1 at 2011-06-20 09:06:26 +0500
+  Processing by ProfileStepsController#invite_friends as HTML
+  [1m[36mUser Load (87.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e' LIMIT 1
+Rendered profile_steps/invite_friends.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 438ms (Views: 22.3ms | ActiveRecord: 87.0ms)
+
+
+Started GET "/profile_steps/profile_info" for 127.0.0.1 at 2011-06-20 09:06:39 +0500
+  Processing by ProfileStepsController#profile_info as HTML
+  [1m[36mUser Load (31.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e' LIMIT 1[0m
+  [1m[35mUser Load (22.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered profile_steps/profile_info.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 714ms (Views: 41.1ms | ActiveRecord: 54.0ms)
+
+
+Started GET "/profile_steps/profile_picture" for 127.0.0.1 at 2011-06-20 09:06:43 +0500
+  Processing by ProfileStepsController#profile_picture as HTML
+  [1m[36mUser Load (46.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e' LIMIT 1[0m
+  [1m[35mUser Load (27.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered profile_steps/profile_picture.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 942ms (Views: 77.9ms | ActiveRecord: 73.4ms)
+
+
+Started POST "/users/4" for 127.0.0.1 at 2011-06-20 09:06:51 +0500
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P3rza19SvHm6oAS7fI8nisgQzDHwum+Vw+lMqnqSuvE=", "user"=>{"profile_picture"=>#<ActionDispatch::Http::UploadedFile:0x9acb328 @original_filename="AzadiPic.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[profile_picture]\"; filename=\"AzadiPic.png\"\r\nContent-Type: image/png\r\n", @tempfile=#<File:/tmp/RackMultipart20110620-3296-17rez1y>>}, "commit"=>"Next", "id"=>"4"}
+  [1m[36mUser Load (21.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e' LIMIT 1[0m
+  [1m[35mUser Load (114.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+[paperclip] identify -format %wx%h '/tmp/stream20110620-3296-s7m6zd.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110620-3296-s7m6zd.png[0]' -resize "100x" -crop "100x100+0+0" +repage '/tmp/stream20110620-3296-s7m6zd20110620-3296-13oduwv' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20110620-3296-s7m6zd.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110620-3296-s7m6zd.png[0]' -resize "150x150>" '/tmp/stream20110620-3296-s7m6zd20110620-3296-10o9w53' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20110620-3296-s7m6zd.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110620-3296-s7m6zd.png[0]' '/tmp/stream20110620-3296-s7m6zd20110620-3296-ozm1hl' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20110620-3296-s7m6zd.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110620-3296-s7m6zd.png[0]' '/tmp/stream20110620-3296-s7m6zd20110620-3296-13og2gp' 2>/dev/null
+  [1m[36mAREL (1.9ms)[0m  [1mUPDATE "users" SET "profile_picture_file_name" = 'AzadiPic.png', "profile_picture_content_type" = 'image/png', "profile_picture_file_size" = 71112, "updated_at" = '2011-06-20 04:06:53.517495' WHERE "users"."id" = 4[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/4/original/AzadiPic.png
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/4/thumb/AzadiPic.png
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/4/small/AzadiPic.png
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/4/url/AzadiPic.png
+[paperclip] saving /home/aliadnan/DainoBook/public/system/profile_pictures/4/default_url/AzadiPic.png
+Redirected to http://localhost:3000/
+Completed 302 Found in 1478ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:06:53 +0500
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (14.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e' LIMIT 1
+  [1m[36mUser Load (19.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 558ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:06:54 +0500
+  Processing by UsersController#home as HTML
+  [1m[35mUser Load (14.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e' LIMIT 1
+  [1m[36mUser Load (12.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/home.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 484ms (Views: 24.4ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-06-20 09:07:38 +0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (24.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'dc04a5060784543518b465dd8e082db71456000e253944ddf3a59091f56a52e3bbb73115e9761f00df3496999b80cb0862e76864274cc96aee6af18dd1c9117e' LIMIT 1
+  [1m[36mUser Load (20.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 665ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:07:39 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (10.3ms)
+Rendered pages/index.html.erb within layouts/main_page (263.1ms)
+Completed 200 OK in 479ms (Views: 270.8ms | ActiveRecord: 45.2ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:07:55 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (7.4ms)
+Rendered pages/index.html.erb within layouts/main_page (111.3ms)
+Completed 200 OK in 347ms (Views: 117.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-06-20 09:08:04 +0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/_new.html.erb (6.9ms)
+Rendered user_sessions/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 214ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:08:12 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mChsJDTqJpEvLza6DO6OcPX+UvoE67jQlHt0dREdECM=", "user_session"=>{"email"=>"aliadnan1984@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (24.8ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'aliadnan1984@gmail.com') LIMIT 1
+Rendered user_sessions/_new.html.erb (7.6ms)
+Rendered user_sessions/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 679ms (Views: 26.0ms | ActiveRecord: 24.8ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:08:19 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mChsJDTqJpEvLza6DO6OcPX+UvoE67jQlHt0dREdECM=", "user_session"=>{"email"=>"aliadnan1984@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (209.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'aliadnan1984@gmail.com') LIMIT 1[0m
+Rendered user_sessions/_new.html.erb (20.8ms)
+Rendered user_sessions/new.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 1018ms (Views: 83.7ms | ActiveRecord: 209.2ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:08:35 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mChsJDTqJpEvLza6DO6OcPX+UvoE67jQlHt0dREdECM=", "user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (20.8ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 682ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:08:37 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (110.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 650ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:08:37 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (20.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/home.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 693ms (Views: 35.0ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-06-20 09:09:33 +0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[36mUser Load (17.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 658ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:09:34 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (10.4ms)
+Rendered pages/index.html.erb within layouts/main_page (168.6ms)
+Completed 200 OK in 475ms (Views: 176.7ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-06-20 09:11:01 +0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/_new.html.erb (11.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 369ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:11:10 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mChsJDTqJpEvLza6DO6OcPX+UvoE67jQlHt0dREdECM=", "user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (13.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1[0m
+Rendered user_sessions/_new.html.erb (6.5ms)
+Rendered user_sessions/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 339ms (Views: 24.6ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:11:16 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mChsJDTqJpEvLza6DO6OcPX+UvoE67jQlHt0dREdECM=", "user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (78.3ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 357ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:11:17 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (15.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 399ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:11:17 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (11.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/home.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 413ms (Views: 23.2ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/edit_profile" for 127.0.0.1 at 2011-06-20 09:12:23 +0500
+  Processing by UsersController#edit_profile as HTML
+  [1m[36mUser Load (10.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (8.8ms)
+Rendered users/edit_profile.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 499ms (Views: 27.8ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 09:12:28 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[36mUser Load (9.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (3.5ms)
+Rendered users/basic_info.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 492ms (Views: 29.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/activities_interests" for 127.0.0.1 at 2011-06-20 09:12:33 +0500
+  Processing by UsersController#activities_interests as HTML
+  [1m[36mUser Load (23.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (5.6ms)
+Rendered users/activities_interests.html.erb within layouts/application (141.7ms)
+Completed 200 OK in 789ms (Views: 156.6ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/contact_info" for 127.0.0.1 at 2011-06-20 09:12:37 +0500
+  Processing by UsersController#contact_info as HTML
+  [1m[36mUser Load (118.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (6.7ms)
+Rendered users/contact_info.html.erb within layouts/application (48.6ms)
+Completed 200 OK in 768ms (Views: 62.4ms | ActiveRecord: 118.3ms)
+
+
+Started GET "/education_work" for 127.0.0.1 at 2011-06-20 09:12:39 +0500
+  Processing by UsersController#education_work as HTML
+  [1m[36mUser Load (22.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (5.8ms)
+Rendered users/education_work.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 690ms (Views: 45.7ms | ActiveRecord: 22.2ms)
+
+
+Started GET "/sports" for 127.0.0.1 at 2011-06-20 09:12:42 +0500
+  Processing by UsersController#sports as HTML
+  [1m[36mUser Load (23.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (6.5ms)
+Rendered users/sports.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 699ms (Views: 45.9ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/profile_pic" for 127.0.0.1 at 2011-06-20 09:12:44 +0500
+  Processing by UsersController#profile_pic as HTML
+  [1m[36mUser Load (126.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (6.1ms)
+Rendered users/profile_pic.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 704ms (Views: 50.8ms | ActiveRecord: 126.1ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 09:12:50 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[36mUser Load (18.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (6.7ms)
+Rendered users/basic_info.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 713ms (Views: 55.7ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 09:13:00 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (10.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (191.2ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))[0m
+Rendered friends/_requested_friends.html.erb (19.9ms)
+  [1m[35mSQL (0.8ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (13.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered friends/index.html.erb within layouts/application (265.6ms)
+Completed 200 OK in 506ms (Views: 273.0ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/users/4/images/favicon.ico" for 127.0.0.1 at 2011-06-20 09:13:01 +0500
+
+ActionController::RoutingError (No route matches "/users/4/images/favicon.ico"):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/users/4/images/favicon.ico" for 127.0.0.1 at 2011-06-20 09:13:04 +0500
+
+ActionController::RoutingError (No route matches "/users/4/images/favicon.ico"):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.5ms)
+
+
+Started GET "/search/people" for 127.0.0.1 at 2011-06-20 09:13:09 +0500
+  Processing by SearchController#people as HTML
+  [1m[36mUser Load (10.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mUser Load (114.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 1 AND (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 1 AND (("friendships".user_id = 4) AND ((status = 'accepted'))) LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 1 AND (("friendships".user_id = 4) AND ((status = 'pending'))) ORDER BY created_at LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_search_people_html_erb__815203448_91501420_233788478 at /home/aliadnan/DainoBook/app/views/search/people.html.erb:11)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 2 AND (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 2 AND (("friendships".user_id = 4) AND ((status = 'accepted'))) LIMIT 1
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 2 AND (("friendships".user_id = 4) AND ((status = 'pending'))) ORDER BY created_at LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_search_people_html_erb__815203448_91501420_233788478 at /home/aliadnan/DainoBook/app/views/search/people.html.erb:11)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 3 AND (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 3 AND (("friendships".user_id = 4) AND ((status = 'accepted'))) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".*, "users"."id" FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE "users"."id" = 3 AND (("friendships".user_id = 4) AND ((status = 'pending'))) ORDER BY created_at LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_search_people_html_erb__815203448_91501420_233788478 at /home/aliadnan/DainoBook/app/views/search/people.html.erb:11)
+Rendered search/people.html.erb within layouts/application (99.2ms)
+Completed 200 OK in 765ms (Views: 101.4ms | ActiveRecord: 130.9ms)
+
+
+Started POST "/users/4/friends?friend_id=3" for 127.0.0.1 at 2011-06-20 09:13:15 +0500
+  Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mChsJDTqJpEvLza6DO6OcPX+UvoE67jQlHt0dREdECM=", "commit"=>"Add to My Friends", "friend_id"=>"3", "user_id"=>"4"}
+  [1m[36mUser Load (20.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (19.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (1.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "status", "created_at", "updated_at") VALUES (4, 3, 'requested', '2011-06-20 04:13:16.613722', '2011-06-20 04:13:16.613722')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "status", "created_at", "updated_at") VALUES (3, 4, 'pending', '2011-06-20 04:13:16.722525', '2011-06-20 04:13:16.722525')
+Redirected to http://localhost:3000/users/4/friends
+Completed 302 Found in 863ms
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 09:13:16 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (15.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (110.5ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))[0m
+  [1m[35mUser Load (85.0ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered friends/_requested_friends.html.erb (187.6ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))[0m
+Rendered friends/_pending_friends.html.erb (15.6ms)
+Rendered friends/index.html.erb within layouts/application (328.1ms)
+Completed 200 OK in 640ms (Views: 249.2ms | ActiveRecord: 102.0ms)
+
+
+Started GET "/edit_profile" for 127.0.0.1 at 2011-06-20 09:13:23 +0500
+  Processing by UsersController#edit_profile as HTML
+  [1m[35mUser Load (12.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (4.0ms)
+Rendered users/edit_profile.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 471ms (Views: 22.1ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 09:13:29 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[35mUser Load (11.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (3.6ms)
+Rendered users/basic_info.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 448ms (Views: 31.1ms | ActiveRecord: 53.4ms)
+
+
+Started GET "/activities_interests" for 127.0.0.1 at 2011-06-20 09:13:38 +0500
+  Processing by UsersController#activities_interests as HTML
+  [1m[35mUser Load (126.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (4.7ms)
+Rendered users/activities_interests.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 576ms (Views: 30.9ms | ActiveRecord: 126.4ms)
+
+
+Started GET "/contact_info" for 127.0.0.1 at 2011-06-20 09:13:41 +0500
+  Processing by UsersController#contact_info as HTML
+  [1m[35mUser Load (24.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (5.5ms)
+Rendered users/contact_info.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 696ms (Views: 52.0ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/sports" for 127.0.0.1 at 2011-06-20 09:13:57 +0500
+  Processing by UsersController#sports as HTML
+  [1m[35mUser Load (14.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (3.1ms)
+Rendered users/sports.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 447ms (Views: 30.7ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-06-20 09:14:55 +0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (81.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 436ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:14:56 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (5.5ms)
+Rendered pages/index.html.erb within layouts/main_page (84.3ms)
+Completed 200 OK in 279ms (Views: 91.3ms | ActiveRecord: 81.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:16:58 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (8.9ms)
+Rendered pages/index.html.erb within layouts/main_page (92.8ms)
+Completed 200 OK in 291ms (Views: 97.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/%5C" for 127.0.0.1 at 2011-06-20 09:17:37 +0500
+
+ActionController::RoutingError (No route matches "/%5C"):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:17:40 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (5.9ms)
+Rendered pages/index.html.erb within layouts/main_page (154.3ms)
+Completed 200 OK in 369ms (Views: 161.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:19:07 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (12.9ms)
+Rendered pages/index.html.erb within layouts/main_page (154.1ms)
+Completed 200 OK in 489ms (Views: 162.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:19:11 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (6.3ms)
+Rendered pages/index.html.erb within layouts/main_page (89.9ms)
+Completed 200 OK in 289ms (Views: 94.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:19:33 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (9.8ms)
+Rendered pages/index.html.erb within layouts/main_page (345.5ms)
+Completed 200 OK in 677ms (Views: 355.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:26:00 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (8.7ms)
+Rendered pages/index.html.erb within layouts/main_page (92.3ms)
+Completed 200 OK in 318ms (Views: 96.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:26:07 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"aliadnan1984@gmail.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (6.1ms)
+Rendered pages/index.html.erb within layouts/main_page (89.5ms)
+Completed 200 OK in 293ms (Views: 94.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:26:15 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"aliadnan1984@gmail.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (6.7ms)
+Rendered pages/index.html.erb within layouts/main_page (172.8ms)
+Completed 200 OK in 426ms (Views: 177.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:26:26 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"aliadnan1984@gmail.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (10.2ms)
+Rendered pages/index.html.erb within layouts/main_page (158.2ms)
+Completed 200 OK in 483ms (Views: 169.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:26:33 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (12.1ms)
+Rendered pages/index.html.erb within layouts/main_page (328.2ms)
+Completed 200 OK in 743ms (Views: 339.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-06-20 09:26:44 +0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/_new.html.erb (10.7ms)
+Rendered user_sessions/new.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 352ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:26:53 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cr5M11zxhPHEfID5XMJqdYWve582r7SBUxc5L+zMc6M=", "user_session"=>{"email"=>"aliadnan1984@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (21.5ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'aliadnan1984@gmail.com') LIMIT 1
+Rendered user_sessions/_new.html.erb (12.4ms)
+Rendered user_sessions/new.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 828ms (Views: 40.2ms | ActiveRecord: 21.5ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:27:02 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cr5M11zxhPHEfID5XMJqdYWve582r7SBUxc5L+zMc6M=", "user_session"=>{"email"=>"aliadnan1984@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (13.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'aliadnan1984@gmail.com') LIMIT 1[0m
+Rendered user_sessions/_new.html.erb (7.7ms)
+Rendered user_sessions/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 453ms (Views: 30.0ms | ActiveRecord: 13.8ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:27:10 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cr5M11zxhPHEfID5XMJqdYWve582r7SBUxc5L+zMc6M=", "user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (17.5ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 536ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:27:11 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (36.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 886ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:27:13 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (22.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/home.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 707ms (Views: 39.5ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:28:07 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (20.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 690ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:28:08 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (21.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/home.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 690ms (Views: 41.5ms | ActiveRecord: 42.8ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-06-20 09:28:11 +0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[36mUser Load (13.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 478ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:28:12 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (6.7ms)
+Rendered pages/index.html.erb within layouts/main_page (101.4ms)
+Completed 200 OK in 311ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:28:19 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"aliadnan1984@gmail.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (118.3ms)
+Rendered pages/index.html.erb within layouts/main_page (263.1ms)
+Completed 200 OK in 501ms (Views: 271.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2011-06-20 09:28:28 +0500
+  Processing by PagesController#index as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (15.2ms)
+Rendered pages/index.html.erb within layouts/main_page (175.3ms)
+Completed 200 OK in 505ms (Views: 183.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:29:03 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (11.1ms)
+Rendered pages/index.html.erb within layouts/main_page (197.0ms)
+Completed 200 OK in 586ms (Views: 208.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:29:06 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (13.6ms)
+Rendered pages/index.html.erb within layouts/main_page (279.3ms)
+Completed 200 OK in 668ms (Views: 287.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:30:11 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (10.8ms)
+Rendered pages/index.html.erb within layouts/main_page (159.1ms)
+Completed 200 OK in 511ms (Views: 171.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:30:22 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (9.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 218ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:30:33 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com"}, "session"=>{"password"=>"[FILTERED]"}}
+Rendered user_sessions/_new.html.erb (10.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 253ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:30:42 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCDR0VV6PfNhr4UFPb+8flJDtTBtdrS6q6Nsy6GqapE=", "user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (28.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1[0m
+Rendered user_sessions/_new.html.erb (16.8ms)
+Rendered user_sessions/new.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 813ms (Views: 56.5ms | ActiveRecord: 28.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:30:55 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (6.4ms)
+Rendered pages/index.html.erb within layouts/main_page (104.8ms)
+Completed 200 OK in 308ms (Views: 109.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-06-20 09:31:14 +0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/_new.html.erb (8.8ms)
+Rendered user_sessions/new.html.erb within layouts/application (98.9ms)
+Completed 200 OK in 275ms (Views: 106.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:32:42 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (18.8ms)
+Rendered pages/index.html.erb within layouts/main_page (187.7ms)
+Completed 200 OK in 755ms (Views: 202.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:32:46 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"email"=>"asdf", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'asdf') LIMIT 1
+Rendered user_sessions/_new.html.erb (12.8ms)
+Rendered user_sessions/new.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 375ms (Views: 41.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:33:01 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (17.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1[0m
+Rendered user_sessions/_new.html.erb (11.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 404ms (Views: 31.7ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:33:08 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (74.4ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 374ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:33:08 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (12.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 416ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:33:09 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (12.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/home.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 424ms (Views: 26.9ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-06-20 09:33:13 +0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[36mUser Load (14.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 424ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:33:13 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (5.9ms)
+Rendered pages/index.html.erb within layouts/main_page (92.2ms)
+Completed 200 OK in 314ms (Views: 102.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 09:33:46 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (20.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 583ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:33:47 +0500
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (124.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 641ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:33:48 +0500
+  Processing by UsersController#home as HTML
+  [1m[35mUser Load (16.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/home.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 460ms (Views: 21.3ms | ActiveRecord: 161.6ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 09:33:52 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (21.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))[0m
+Rendered friends/_friends.html.erb (119.2ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))
+  [1m[36mUser Load (94.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered friends/_requested_friends.html.erb (141.0ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (13.9ms)
+Rendered friends/index.html.erb within layouts/application (289.8ms)
+Completed 200 OK in 644ms (Views: 203.3ms | ActiveRecord: 116.8ms)
+
+
+Started GET "/edit_profile" for 127.0.0.1 at 2011-06-20 09:34:58 +0500
+  Processing by UsersController#edit_profile as HTML
+  [1m[36mUser Load (16.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (4.5ms)
+Rendered users/edit_profile.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 629ms (Views: 29.6ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/activities_interests" for 127.0.0.1 at 2011-06-20 09:35:05 +0500
+  Processing by UsersController#activities_interests as HTML
+  [1m[36mUser Load (14.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (3.8ms)
+Rendered users/activities_interests.html.erb within layouts/application (100.4ms)
+Completed 200 OK in 456ms (Views: 107.9ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/activities_interests" for 127.0.0.1 at 2011-06-20 09:35:05 +0500
+  Processing by UsersController#activities_interests as HTML
+  [1m[36mUser Load (13.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (3.4ms)
+Rendered users/activities_interests.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 474ms (Views: 31.0ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 09:35:57 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[36mUser Load (16.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (4.3ms)
+Rendered users/basic_info.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 456ms (Views: 33.8ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:43:04 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (26.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 655ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:43:05 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (27.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+ERROR: compiling _app_views_layouts_application_html_erb__431000560_92107790_233788478 RAISED /home/aliadnan/DainoBook/app/views/layouts/application.html.erb:94: syntax error, unexpected tASSOC
+...s_path(current_user) , class => is_mainnav_active?(user_frie...
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb__431000560_92107790_233788478(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!doctype html>
+<!-- built using HTML5BoilerPlate -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta content="text/html"  charset="utf-8" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+  <title>The DainoBook - ');@output_buffer.append= ( yield :title );@output_buffer.safe_concat(' </title>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=940px, initial-scale=1.0"/>
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="images/favicon.ico"/>
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+
+  <!-- CSS: implied media="all" -->
+  ');@output_buffer.append= ( stylesheet_link_tag "style" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "960" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "text" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "base_2" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <style type="text/css">
+	#intro div {
+		margin-bottom: 5px;
+	}
+	#intro img {
+
+	}
+	#signin .credentials input {
+		width: 140px;
+	}
+	#signin .options p {
+		margin-top: 5px
+	}
+	#signupform input {
+		width: 380px;
+		height: 27px;
+		margin-bottom: 8px;
+		margin-left: 10px;
+	}
+  </style>
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  ');@output_buffer.append= ( javascript_include_tag "libs/modernizr-1.7.min" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+</head>
+
+<body>
+
+  <div id="container">
+  <!-- Content -->
+    <header>
+		<div class="container_12">
+ 
+				<div class="grid_4"> 
+					<a href="/">
+						<img src="/images/daino.png" width="52px" height="52px" alt="logo"/>
+                		<img src="/images/dblogo.png" alt="Daino Logo"/>
+					</a> 
+				</div>
+');				 if not current_user 
+@output_buffer.safe_concat('                                <!--
+				<div class="grid_8" id="signin" >
+				
+                                    <form action="/user_sessions/"  method="post">
+						<fieldset class="credentials">
+							<div align="left">
+								<input id="username" type="text" autocomplete="on" placeholder="Username" name="user_session[email]" />
+								<input id="password" type="password" autocomplete="on" placeholder="Password" name="session[password]" value="" />
+								<button> Sign in </button>
+							</div>
+						</fieldset>
+				    </form>
+				</div>
+                                -->
+');				 else 
+@output_buffer.safe_concat('				<div class="grid_8">
+					<nav>
+						<ul>
+							<li> ');@output_buffer.append= ( link_to "Profile", user_friends_path(current_user) , class => is_mainnav_active?(user_friends_path(current_user)) );@output_buffer.safe_concat(' </li>
+							<li> ');@output_buffer.append= ( link_to "Edit", :edit_profile );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Friends", user_friends_path(current_user) );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Search", '/search/people' );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Invite Friends", :invite_friends);@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Logout", :logout);@output_buffer.safe_concat(' </li>
+						</ul>
+					</nav>
+				</div>
+');				 end 
+@output_buffer.safe_concat('			<div class="clear"></div>
+		</div>
+    </header>
+
+    <div id="main" role="main" class="mbody">
+        <!-- Body Content -->
+    	<div class="container_12">
+
+    		<div class="grid_4" id="sidebar">
+    			');@output_buffer.append= ( yield :sidebar );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    		</div>
+
+    		<div class="grid_8" id="mainpane">
+    			');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    		</div>
+    		<div class="clear"></div>
+    	</div>
+  	<!-- End Body Content -->
+    </div>
+
+	<footer>
+		<div class="container_12">
+			<div class="grid_12" align="center">
+				<a href=\'/tos/\'>Terms of services</a> | <a href=\'/about-us/\'>About Us</a> | <a href=\'/about-us/\'>Contact us</a> | <small>Copyright (C) 2011 - All Copies Are Right </small>
+			</div>
+			<div class="clear"></div>
+		</div>
+    </footer>
+  </div> <!-- eo #container -->
+
+');
+@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "libs/jquery-1.5.1.min.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <!-- scripts concatenated and minified via ant build script-->
+  ');@output_buffer.append= ( javascript_include_tag "plugins" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "script" );@output_buffer.safe_concat('
+');
+
+@output_buffer.safe_concat('  <!-- end scripts-->
+
+
+  <!--[if lt IE 7 ]>
+');
+@output_buffer.safe_concat('    ');@output_buffer.append= ( javascript_include_tag "plugins" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <script>DD_belatedPNG.fix("img, .png_bg");</script>
+  <![endif]-->
+
+
+
+  <script type="text/javascript">
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site\'s ID
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+
+</body>
+</html>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `module_eval'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `compile'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `block in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:445:in `_run__795463129__process_action__326504726__callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `block in action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered users/home.html.erb within layouts/application (125.7ms)
+Completed   in 768ms
+
+ActionView::Template::Error (/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:94: syntax error, unexpected tASSOC
+...s_path(current_user) , class => is_mainnav_active?(user_frie...
+...                               ^):
+    91: 				<div class="grid_8">
+    92: 					<nav>
+    93: 						<ul>
+    94: 							<li> <%= link_to "Profile", user_friends_path(current_user) , class => is_mainnav_active?(user_friends_path(current_user)) %> </li>
+    95: 							<li> <%= link_to "Edit", :edit_profile %> </li>
+    96:                                                         <li> <%= link_to "Friends", user_friends_path(current_user) %> </li>
+    97:                                                         <li> <%= link_to "Search", '/search/people' %> </li>
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.9ms)
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (29.7ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:43:41 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (83.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+ERROR: compiling _app_views_layouts_application_html_erb__431000560_86573390_233788478 RAISED /home/aliadnan/DainoBook/app/views/layouts/application.html.erb:94: syntax error, unexpected tASSOC
+...s_path(current_user) , class => is_mainnav_active?("index") ...
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb__431000560_86573390_233788478(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!doctype html>
+<!-- built using HTML5BoilerPlate -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta content="text/html"  charset="utf-8" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+  <title>The DainoBook - ');@output_buffer.append= ( yield :title );@output_buffer.safe_concat(' </title>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=940px, initial-scale=1.0"/>
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="images/favicon.ico"/>
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+
+  <!-- CSS: implied media="all" -->
+  ');@output_buffer.append= ( stylesheet_link_tag "style" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "960" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "text" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "base_2" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <style type="text/css">
+	#intro div {
+		margin-bottom: 5px;
+	}
+	#intro img {
+
+	}
+	#signin .credentials input {
+		width: 140px;
+	}
+	#signin .options p {
+		margin-top: 5px
+	}
+	#signupform input {
+		width: 380px;
+		height: 27px;
+		margin-bottom: 8px;
+		margin-left: 10px;
+	}
+  </style>
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  ');@output_buffer.append= ( javascript_include_tag "libs/modernizr-1.7.min" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+</head>
+
+<body>
+
+  <div id="container">
+  <!-- Content -->
+    <header>
+		<div class="container_12">
+ 
+				<div class="grid_4"> 
+					<a href="/">
+						<img src="/images/daino.png" width="52px" height="52px" alt="logo"/>
+                		<img src="/images/dblogo.png" alt="Daino Logo"/>
+					</a> 
+				</div>
+');				 if not current_user 
+@output_buffer.safe_concat('                                <!--
+				<div class="grid_8" id="signin" >
+				
+                                    <form action="/user_sessions/"  method="post">
+						<fieldset class="credentials">
+							<div align="left">
+								<input id="username" type="text" autocomplete="on" placeholder="Username" name="user_session[email]" />
+								<input id="password" type="password" autocomplete="on" placeholder="Password" name="session[password]" value="" />
+								<button> Sign in </button>
+							</div>
+						</fieldset>
+				    </form>
+				</div>
+                                -->
+');				 else 
+@output_buffer.safe_concat('				<div class="grid_8">
+					<nav>
+						<ul>
+							<li> ');@output_buffer.append= ( link_to "Profile", user_friends_path(current_user) , class => is_mainnav_active?("index") );@output_buffer.safe_concat(' </li>
+							<li> ');@output_buffer.append= ( link_to "Edit", :edit_profile );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Friends", user_friends_path(current_user) );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Search", '/search/people' );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Invite Friends", :invite_friends);@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Logout", :logout);@output_buffer.safe_concat(' </li>
+						</ul>
+					</nav>
+				</div>
+');				 end 
+@output_buffer.safe_concat('			<div class="clear"></div>
+		</div>
+    </header>
+
+    <div id="main" role="main" class="mbody">
+        <!-- Body Content -->
+    	<div class="container_12">
+
+    		<div class="grid_4" id="sidebar">
+    			');@output_buffer.append= ( yield :sidebar );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    		</div>
+
+    		<div class="grid_8" id="mainpane">
+    			');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    		</div>
+    		<div class="clear"></div>
+    	</div>
+  	<!-- End Body Content -->
+    </div>
+
+	<footer>
+		<div class="container_12">
+			<div class="grid_12" align="center">
+				<a href=\'/tos/\'>Terms of services</a> | <a href=\'/about-us/\'>About Us</a> | <a href=\'/about-us/\'>Contact us</a> | <small>Copyright (C) 2011 - All Copies Are Right </small>
+			</div>
+			<div class="clear"></div>
+		</div>
+    </footer>
+  </div> <!-- eo #container -->
+
+');
+@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "libs/jquery-1.5.1.min.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <!-- scripts concatenated and minified via ant build script-->
+  ');@output_buffer.append= ( javascript_include_tag "plugins" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "script" );@output_buffer.safe_concat('
+');
+
+@output_buffer.safe_concat('  <!-- end scripts-->
+
+
+  <!--[if lt IE 7 ]>
+');
+@output_buffer.safe_concat('    ');@output_buffer.append= ( javascript_include_tag "plugins" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <script>DD_belatedPNG.fix("img, .png_bg");</script>
+  <![endif]-->
+
+
+
+  <script type="text/javascript">
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site\'s ID
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+
+</body>
+</html>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `module_eval'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `compile'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `block in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:445:in `_run__795463129__process_action__326504726__callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `block in action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered users/home.html.erb within layouts/application (9.0ms)
+Completed   in 414ms
+
+ActionView::Template::Error (/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:94: syntax error, unexpected tASSOC
+...s_path(current_user) , class => is_mainnav_active?("index") ...
+...                               ^):
+    91: 				<div class="grid_8">
+    92: 					<nav>
+    93: 						<ul>
+    94: 							<li> <%= link_to "Profile", user_friends_path(current_user) , class => is_mainnav_active?("index") %> </li>
+    95: 							<li> <%= link_to "Edit", :edit_profile %> </li>
+    96:                                                         <li> <%= link_to "Friends", user_friends_path(current_user) %> </li>
+    97:                                                         <li> <%= link_to "Search", '/search/people' %> </li>
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.6ms)
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.3ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:44:45 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (54.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+ERROR: compiling _app_views_layouts_application_html_erb__431000560_86008330_233788478 RAISED /home/aliadnan/DainoBook/app/views/layouts/application.html.erb:94: syntax error, unexpected tASSOC
+...s_path(current_user) , class => is_mainnav_active?("index") ...
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb__431000560_86008330_233788478(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!doctype html>
+<!-- built using HTML5BoilerPlate -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta content="text/html"  charset="utf-8" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+  <title>The DainoBook - ');@output_buffer.append= ( yield :title );@output_buffer.safe_concat(' </title>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=940px, initial-scale=1.0"/>
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="images/favicon.ico"/>
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+
+  <!-- CSS: implied media="all" -->
+  ');@output_buffer.append= ( stylesheet_link_tag "style" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "960" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "text" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "base_2" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <style type="text/css">
+	#intro div {
+		margin-bottom: 5px;
+	}
+	#intro img {
+
+	}
+	#signin .credentials input {
+		width: 140px;
+	}
+	#signin .options p {
+		margin-top: 5px
+	}
+	#signupform input {
+		width: 380px;
+		height: 27px;
+		margin-bottom: 8px;
+		margin-left: 10px;
+	}
+  </style>
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  ');@output_buffer.append= ( javascript_include_tag "libs/modernizr-1.7.min" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+</head>
+
+<body>
+
+  <div id="container">
+  <!-- Content -->
+    <header>
+		<div class="container_12">
+ 
+				<div class="grid_4"> 
+					<a href="/">
+						<img src="/images/daino.png" width="52px" height="52px" alt="logo"/>
+                		<img src="/images/dblogo.png" alt="Daino Logo"/>
+					</a> 
+				</div>
+');				 if not current_user 
+@output_buffer.safe_concat('                                <!--
+				<div class="grid_8" id="signin" >
+				
+                                    <form action="/user_sessions/"  method="post">
+						<fieldset class="credentials">
+							<div align="left">
+								<input id="username" type="text" autocomplete="on" placeholder="Username" name="user_session[email]" />
+								<input id="password" type="password" autocomplete="on" placeholder="Password" name="session[password]" value="" />
+								<button> Sign in </button>
+							</div>
+						</fieldset>
+				    </form>
+				</div>
+                                -->
+');				 else 
+@output_buffer.safe_concat('				<div class="grid_8">
+					<nav>
+						<ul>
+							<li> ');@output_buffer.append= ( link_to "Profile", user_friends_path(current_user) , class => is_mainnav_active?("index") );@output_buffer.safe_concat(' </li>
+							<li> ');@output_buffer.append= ( link_to "Edit", :edit_profile );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Friends", user_friends_path(current_user) );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Search", '/search/people' );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Invite Friends", :invite_friends);@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Logout", :logout);@output_buffer.safe_concat(' </li>
+						</ul>
+					</nav>
+				</div>
+');				 end 
+@output_buffer.safe_concat('			<div class="clear"></div>
+		</div>
+    </header>
+
+    <div id="main" role="main" class="mbody">
+        <!-- Body Content -->
+    	<div class="container_12">
+
+    		<div class="grid_4" id="sidebar">
+    			');@output_buffer.append= ( yield :sidebar );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    		</div>
+
+    		<div class="grid_8" id="mainpane">
+    			');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    		</div>
+    		<div class="clear"></div>
+    	</div>
+  	<!-- End Body Content -->
+    </div>
+
+	<footer>
+		<div class="container_12">
+			<div class="grid_12" align="center">
+				<a href=\'/tos/\'>Terms of services</a> | <a href=\'/about-us/\'>About Us</a> | <a href=\'/about-us/\'>Contact us</a> | <small>Copyright (C) 2011 - All Copies Are Right </small>
+			</div>
+			<div class="clear"></div>
+		</div>
+    </footer>
+  </div> <!-- eo #container -->
+
+');
+@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "libs/jquery-1.5.1.min.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <!-- scripts concatenated and minified via ant build script-->
+  ');@output_buffer.append= ( javascript_include_tag "plugins" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "script" );@output_buffer.safe_concat('
+');
+
+@output_buffer.safe_concat('  <!-- end scripts-->
+
+
+  <!--[if lt IE 7 ]>
+');
+@output_buffer.safe_concat('    ');@output_buffer.append= ( javascript_include_tag "plugins" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <script>DD_belatedPNG.fix("img, .png_bg");</script>
+  <![endif]-->
+
+
+
+  <script type="text/javascript">
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site\'s ID
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+
+</body>
+</html>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `module_eval'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `compile'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `block in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:445:in `_run__795463129__process_action__326504726__callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `block in action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered users/home.html.erb within layouts/application (15.0ms)
+Completed   in 782ms
+
+ActionView::Template::Error (/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:94: syntax error, unexpected tASSOC
+...s_path(current_user) , class => is_mainnav_active?("index") ...
+...                               ^):
+    91: 				<div class="grid_8">
+    92: 					<nav>
+    93: 						<ul>
+    94: 							<li> <%= link_to "Profile", user_friends_path(current_user) , class => is_mainnav_active?("index") %> </li>
+    95: 							<li> <%= link_to "Edit", :edit_profile %> </li>
+    96:                                                         <li> <%= link_to "Friends", user_friends_path(current_user) %> </li>
+    97:                                                         <li> <%= link_to "Search", '/search/people' %> </li>
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.6ms)
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.4ms)
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (34.8ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:45:02 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (21.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/home.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 672ms (Views: 34.7ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:45:18 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (81.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/home.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 504ms (Views: 24.1ms | ActiveRecord: 81.1ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 09:45:25 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (16.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (107.7ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))[0m
+  [1m[35mUser Load (173.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered friends/_requested_friends.html.erb (249.8ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))[0m
+Rendered friends/_pending_friends.html.erb (28.6ms)
+Rendered friends/index.html.erb within layouts/application (419.3ms)
+Completed 200 OK in 763ms (Views: 252.8ms | ActiveRecord: 191.3ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 09:45:29 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (122.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))[0m
+Rendered friends/_friends.html.erb (224.2ms)
+  [1m[35mSQL (0.8ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))
+  [1m[36mUser Load (27.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered friends/_requested_friends.html.erb (105.6ms)
+  [1m[35mSQL (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (22.9ms)
+Rendered friends/index.html.erb within layouts/application (480.8ms)
+Completed 200 OK in 973ms (Views: 465.3ms | ActiveRecord: 151.8ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 09:46:34 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (22.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (265.1ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))[0m
+  [1m[35mUser Load (15.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered friends/_requested_friends.html.erb (67.5ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))[0m
+Rendered friends/_pending_friends.html.erb (14.8ms)
+Rendered friends/index.html.erb within layouts/application (364.0ms)
+Completed 200 OK in 712ms (Views: 363.3ms | ActiveRecord: 39.4ms)
+
+
+Started GET "/edit_profile" for 127.0.0.1 at 2011-06-20 09:46:38 +0500
+  Processing by UsersController#edit_profile as HTML
+  [1m[35mUser Load (15.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (3.4ms)
+Rendered users/edit_profile.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 433ms (Views: 25.4ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/edit_profile" for 127.0.0.1 at 2011-06-20 09:47:44 +0500
+  Processing by UsersController#edit_profile as HTML
+  [1m[35mUser Load (162.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (5.0ms)
+Rendered users/edit_profile.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 631ms (Views: 31.6ms | ActiveRecord: 164.7ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 09:49:59 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (14.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))[0m
+Rendered friends/_friends.html.erb (126.5ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))
+  [1m[36mUser Load (12.9ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered friends/_requested_friends.html.erb (170.7ms)
+  [1m[35mSQL (1.7ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (22.5ms)
+Rendered friends/index.html.erb within layouts/application (334.6ms)
+Completed 200 OK in 741ms (Views: 328.3ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 09:50:18 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (12.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (128.7ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))[0m
+  [1m[35mUser Load (17.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered friends/_requested_friends.html.erb (70.8ms)
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))[0m
+Rendered friends/_pending_friends.html.erb (19.8ms)
+Rendered friends/index.html.erb within layouts/application (236.8ms)
+Completed 200 OK in 678ms (Views: 329.8ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-06-20 09:50:20 +0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (14.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 544ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:50:21 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (12.6ms)
+Rendered pages/index.html.erb within layouts/main_page (167.1ms)
+Completed 200 OK in 528ms (Views: 182.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-20 09:51:01 +0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fHlDRKKL0FE9WFQ/HAce5RWD9RHHfoSiv06KAfKL4GI=", "user"=>{"first_name"=>"Bilal", "last_name"=>"Munir", "email"=>"bmunir@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('bmunir@gmail.com')) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568') LIMIT 1[0m
+  [1m[35mAREL (1.1ms)[0m  INSERT INTO "users" ("email", "crypted_password", "password_salt", "persistence_token", "created_at", "updated_at", "first_name", "last_name", "location", "phone", "profile_picture_file_name", "profile_picture_content_type", "profile_picture_file_size", "basic_current_city", "baisc_Info_home_town", "basic_info_gender", "basic_info_show_gender_in_profile", "basic_info_birthday", "basic_info_show_birthday_in_profile", "basic_info_interested_in", "basic_info_about_me", "relationship_status", "relative_name", "friends", "employer", "college_university", "high_school", "religion", "religion_description", "political_views", "political_views_description", "people_inspired_by", "favorite_quotations", "music", "books", "movies", "television", "games", "sports_played", "favorite_team", "favorite_athletes", "activities", "interests", "im_screen_name", "phones", "address", "city_town", "zip", "neighborhood", "website") VALUES ('bmunir@gmail.com', '2cf6e5bba084527f585d5b2d369937174c03f70ca79d32c263b92c10406fffc7bdf702c698ab09b2e8925c9636c4153792510eacb764fc43c7eb242b1fc034b5', 'EFWibkIPzw58w3mekig', '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568', '2011-06-20 04:51:02.205591', '2011-06-20 04:51:02.205591', 'Bilal', 'Munir', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/profile_steps/invite_friends
+Completed 302 Found in 770ms
+
+
+Started GET "/profile_steps/invite_friends" for 127.0.0.1 at 2011-06-20 09:51:02 +0500
+  Processing by ProfileStepsController#invite_friends as HTML
+  [1m[36mUser Load (21.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1
+Rendered profile_steps/invite_friends.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 572ms (Views: 30.9ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/profile_steps/profile_info" for 127.0.0.1 at 2011-06-20 09:51:10 +0500
+  Processing by ProfileStepsController#profile_info as HTML
+  [1m[36mUser Load (12.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (93.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile_steps/profile_info.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 515ms (Views: 34.3ms | ActiveRecord: 105.7ms)
+
+
+Started GET "/profile_steps/profile_picture" for 127.0.0.1 at 2011-06-20 09:51:14 +0500
+  Processing by ProfileStepsController#profile_picture as HTML
+  [1m[36mUser Load (87.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (12.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile_steps/profile_picture.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 455ms (Views: 26.2ms | ActiveRecord: 100.2ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:51:18 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (23.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (149.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered users/home.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 1066ms (Views: 56.5ms | ActiveRecord: 173.1ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:51:20 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (137.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (21.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered users/home.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 714ms (Views: 33.1ms | ActiveRecord: 159.0ms)
+
+
+Started GET "/users/5/friends" for 127.0.0.1 at 2011-06-20 09:51:37 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (34.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (125.9ms)
+  [1m[36mSQL (3.7ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'requested')))[0m
+Rendered friends/_requested_friends.html.erb (100.6ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (20.9ms)
+  [1m[36mUser Load (16.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered friends/index.html.erb within layouts/application (312.4ms)
+Completed 200 OK in 860ms (Views: 307.5ms | ActiveRecord: 55.5ms)
+
+
+Started GET "/users/5/images/favicon.ico" for 127.0.0.1 at 2011-06-20 09:51:38 +0500
+
+ActionController::RoutingError (No route matches "/users/5/images/favicon.ico"):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/users/5/images/favicon.ico" for 127.0.0.1 at 2011-06-20 09:51:41 +0500
+
+ActionController::RoutingError (No route matches "/users/5/images/favicon.ico"):
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 09:54:11 +0500
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (13.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (11.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 470ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:54:12 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (27.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (20.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered users/home.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 622ms (Views: 34.5ms | ActiveRecord: 72.3ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:55:17 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (31.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (21.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered users/home.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 979ms (Views: 34.1ms | ActiveRecord: 53.4ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:58:10 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (34.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (25.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+ERROR: compiling _app_views_layouts_application_html_erb__431000560_90980460_233788478 RAISED /home/aliadnan/DainoBook/app/views/layouts/application.html.erb:100: syntax error, unexpected tLABEL
+...output_buffer.append= ( params:controler] );@output_buffer.s...
+...                               ^
+/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:104: syntax error, unexpected keyword_end, expecting ')'
+');				 end 
+   				    ^
+/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:163: syntax error, unexpected keyword_ensure, expecting ')'
+/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:165: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_layouts_application_html_erb__431000560_90980460_233788478(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!doctype html>
+<!-- built using HTML5BoilerPlate -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta content="text/html"  charset="utf-8" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+  <title>The DainoBook - ');@output_buffer.append= ( yield :title );@output_buffer.safe_concat(' </title>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=940px, initial-scale=1.0"/>
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="images/favicon.ico"/>
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+
+  <!-- CSS: implied media="all" -->
+  ');@output_buffer.append= ( stylesheet_link_tag "style" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "960" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "text" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( stylesheet_link_tag "base_2" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <style type="text/css">
+	#intro div {
+		margin-bottom: 5px;
+	}
+	#intro img {
+
+	}
+	#signin .credentials input {
+		width: 140px;
+	}
+	#signin .options p {
+		margin-top: 5px
+	}
+	#signupform input {
+		width: 380px;
+		height: 27px;
+		margin-bottom: 8px;
+		margin-left: 10px;
+	}
+  </style>
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  ');@output_buffer.append= ( javascript_include_tag "libs/modernizr-1.7.min" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+</head>
+
+<body>
+
+  <div id="container">
+  <!-- Content -->
+    <header>
+		<div class="container_12">
+ 
+				<div class="grid_4"> 
+					<a href="/">
+						<img src="/images/daino.png" width="52px" height="52px" alt="logo"/>
+                		<img src="/images/dblogo.png" alt="Daino Logo"/>
+					</a> 
+				</div>
+');				 if not current_user 
+@output_buffer.safe_concat('                                <!--
+				<div class="grid_8" id="signin" >
+				
+                                    <form action="/user_sessions/"  method="post">
+						<fieldset class="credentials">
+							<div align="left">
+								<input id="username" type="text" autocomplete="on" placeholder="Username" name="user_session[email]" />
+								<input id="password" type="password" autocomplete="on" placeholder="Password" name="session[password]" value="" />
+								<button> Sign in </button>
+							</div>
+						</fieldset>
+				    </form>
+				</div>
+                                -->
+');				 else 
+@output_buffer.safe_concat('				<div class="grid_8">
+					<nav>
+						<ul>
+							<li> ');@output_buffer.append= ( link_to "Profile", user_friends_path(current_user) , :class => is_mainnav_active?(user_friends_path(current_user) ) );@output_buffer.safe_concat(' </li>
+							<li> ');@output_buffer.append= ( link_to "Edit", :edit_profile , :class => is_mainnav_active?(:edit_profile));@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Friends", user_friends_path(current_user) );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Search", '/search/people' );@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Invite Friends", :invite_friends);@output_buffer.safe_concat(' </li>
+                                                        <li> ');@output_buffer.append= ( link_to "Logout", :logout);@output_buffer.safe_concat(' </li>
+                                                        <li>');@output_buffer.append= ( params:controler] );@output_buffer.safe_concat(' </li>
+						</ul>
+					</nav>
+				</div>
+');				 end 
+@output_buffer.safe_concat('			<div class="clear"></div>
+		</div>
+    </header>
+
+    <div id="main" role="main" class="mbody">
+        <!-- Body Content -->
+    	<div class="container_12">
+
+    		<div class="grid_4" id="sidebar">
+    			');@output_buffer.append= ( yield :sidebar );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    		</div>
+
+    		<div class="grid_8" id="mainpane">
+    			');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    		</div>
+    		<div class="clear"></div>
+    	</div>
+  	<!-- End Body Content -->
+    </div>
+
+	<footer>
+		<div class="container_12">
+			<div class="grid_12" align="center">
+				<a href=\'/tos/\'>Terms of services</a> | <a href=\'/about-us/\'>About Us</a> | <a href=\'/about-us/\'>Contact us</a> | <small>Copyright (C) 2011 - All Copies Are Right </small>
+			</div>
+			<div class="clear"></div>
+		</div>
+    </footer>
+  </div> <!-- eo #container -->
+
+');
+@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "libs/jquery-1.5.1.min.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <!-- scripts concatenated and minified via ant build script-->
+  ');@output_buffer.append= ( javascript_include_tag "plugins" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "script" );@output_buffer.safe_concat('
+');
+
+@output_buffer.safe_concat('  <!-- end scripts-->
+
+
+  <!--[if lt IE 7 ]>
+');
+@output_buffer.safe_concat('    ');@output_buffer.append= ( javascript_include_tag "plugins" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <script>DD_belatedPNG.fix("img, .png_bg");</script>
+  <![endif]-->
+
+
+
+  <script type="text/javascript">
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site\'s ID
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+
+</body>
+</html>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `module_eval'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `compile'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `block in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:445:in `_run__795463129__process_action__326504726__callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `block in action'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/aliadnan/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered users/home.html.erb within layouts/application (12.4ms)
+Completed   in 988ms
+
+ActionView::Template::Error (/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:100: syntax error, unexpected tLABEL
+...output_buffer.append= ( params:controler] );@output_buffer.s...
+...                               ^
+/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:104: syntax error, unexpected keyword_end, expecting ')'
+');				 end 
+   				    ^
+/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:163: syntax error, unexpected keyword_ensure, expecting ')'
+/home/aliadnan/DainoBook/app/views/layouts/application.html.erb:165: syntax error, unexpected keyword_end, expecting ')'):
+    97:                                                         <li> <%= link_to "Search", '/search/people' %> </li>
+    98:                                                         <li> <%= link_to "Invite Friends", :invite_friends%> </li>
+    99:                                                         <li> <%= link_to "Logout", :logout%> </li>
+    100:                                                         <li><%= params:controler] %> </li>
+    101: 						</ul>
+    102: 					</nav>
+    103: 				</div>
+  
+
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.6ms)
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (23.5ms)
+Rendered /home/aliadnan/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (55.8ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 09:58:49 +0500
+  Processing by UsersController#home as HTML
+  [1m[36mUser Load (13.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (12.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered users/home.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 572ms (Views: 21.0ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/users/5/friends" for 127.0.0.1 at 2011-06-20 09:58:58 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (14.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (202.0ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'requested')))[0m
+Rendered friends/_requested_friends.html.erb (13.3ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (15.1ms)
+  [1m[36mUser Load (16.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered friends/index.html.erb within layouts/application (289.5ms)
+Completed 200 OK in 541ms (Views: 279.1ms | ActiveRecord: 32.3ms)
+
+
+Started GET "/edit_profile" for 127.0.0.1 at 2011-06-20 09:59:02 +0500
+  Processing by UsersController#edit_profile as HTML
+  [1m[36mUser Load (20.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (92.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (4.0ms)
+Rendered users/edit_profile.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 814ms (Views: 32.9ms | ActiveRecord: 113.2ms)
+
+
+Started GET "/users/5/friends" for 127.0.0.1 at 2011-06-20 09:59:08 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (26.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (304.8ms)
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'requested')))[0m
+Rendered friends/_requested_friends.html.erb (25.4ms)
+  [1m[35mSQL (0.9ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (27.1ms)
+  [1m[36mUser Load (31.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered friends/index.html.erb within layouts/application (461.2ms)
+Completed 200 OK in 891ms (Views: 439.0ms | ActiveRecord: 60.4ms)
+
+
+Started GET "/users/5/friends" for 127.0.0.1 at 2011-06-20 09:59:50 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (13.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (196.7ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'requested')))[0m
+Rendered friends/_requested_friends.html.erb (16.6ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (14.4ms)
+  [1m[36mUser Load (18.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered friends/index.html.erb within layouts/application (289.6ms)
+Completed 200 OK in 709ms (Views: 278.0ms | ActiveRecord: 33.0ms)
+
+
+Started GET "/users/5/friends" for 127.0.0.1 at 2011-06-20 10:01:35 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (11.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (108.8ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'requested')))[0m
+Rendered friends/_requested_friends.html.erb (12.6ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 5) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (16.2ms)
+  [1m[36mUser Load (15.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered friends/index.html.erb within layouts/application (267.7ms)
+Completed 200 OK in 608ms (Views: 260.5ms | ActiveRecord: 27.9ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-06-20 10:02:08 +0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[36mUser Load (23.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '8622534d8ecff7b5ad4f25987f0f54cb603ddd4ae9557830b11d5a5f289ac2ab09ca7030eaf5c914320ea04d11ef14285df9276ab68b3afbb00b80e3d1359568' LIMIT 1[0m
+  [1m[35mUser Load (22.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 694ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 10:02:09 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (19.7ms)
+Rendered pages/index.html.erb within layouts/main_page (463.0ms)
+Completed 200 OK in 775ms (Views: 471.6ms | ActiveRecord: 45.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 10:02:31 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (10.3ms)
+Rendered pages/index.html.erb within layouts/main_page (168.4ms)
+Completed 200 OK in 487ms (Views: 180.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 10:04:27 +0500
+  Processing by PagesController#index as HTML
+Rendered user_sessions/_new.html.erb (10.4ms)
+Rendered pages/index.html.erb within layouts/main_page (154.7ms)
+Completed 200 OK in 482ms (Views: 161.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-06-20 10:04:49 +0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"email"=>"ali@ali.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (30.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".email) = 'ali@ali.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 624ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-20 10:04:50 +0500
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (81.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 418ms
+
+
+Started GET "/userhome" for 127.0.0.1 at 2011-06-20 10:04:50 +0500
+  Processing by UsersController#home as HTML
+  [1m[35mUser Load (11.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/home.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 411ms (Views: 20.1ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 10:04:54 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (26.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))[0m
+Rendered friends/_friends.html.erb (247.5ms)
+  [1m[35mSQL (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))
+  [1m[36mUser Load (30.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered friends/_requested_friends.html.erb (230.4ms)
+  [1m[35mSQL (4.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))
+Rendered friends/_pending_friends.html.erb (35.3ms)
+Rendered friends/index.html.erb within layouts/application (548.9ms)
+Completed 200 OK in 1149ms (Views: 531.1ms | ActiveRecord: 92.2ms)
+
+
+Started GET "/edit_profile" for 127.0.0.1 at 2011-06-20 10:04:56 +0500
+  Processing by UsersController#edit_profile as HTML
+  [1m[36mUser Load (30.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (6.4ms)
+Rendered users/edit_profile.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 797ms (Views: 41.6ms | ActiveRecord: 30.9ms)
+
+
+Started GET "/edit_profile" for 127.0.0.1 at 2011-06-20 10:07:36 +0500
+  Processing by UsersController#edit_profile as HTML
+  [1m[36mUser Load (16.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (77.1ms)
+Rendered users/edit_profile.html.erb within layouts/application (94.3ms)
+Completed 200 OK in 444ms (Views: 104.4ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 10:07:39 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[36mUser Load (13.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (3.9ms)
+Rendered users/basic_info.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 457ms (Views: 35.5ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 10:08:19 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[36mUser Load (23.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (7.8ms)
+Rendered users/basic_info.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 761ms (Views: 52.3ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 10:08:25 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[36mUser Load (15.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered users/_edit_profile_sections.html.erb (4.9ms)
+Rendered users/basic_info.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 443ms (Views: 33.0ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/users/4/friends" for 127.0.0.1 at 2011-06-20 10:38:53 +0500
+  Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (10.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'accepted')))
+Rendered friends/_friends.html.erb (196.6ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested')))[0m
+  [1m[35mUser Load (17.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'requested'))) ORDER BY created_at
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Rendered friends/_requested_friends.html.erb (69.9ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users".id = "friendships".friend_id WHERE (("friendships".user_id = 4) AND ((status = 'pending')))[0m
+Rendered friends/_pending_friends.html.erb (17.1ms)
+Rendered friends/index.html.erb within layouts/application (308.2ms)
+Completed 200 OK in 570ms (Views: 297.3ms | ActiveRecord: 29.0ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 10:38:54 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[35mUser Load (10.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (3.8ms)
+Rendered users/basic_info.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 418ms (Views: 32.0ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/basic_info" for 127.0.0.1 at 2011-06-20 10:53:22 +0500
+  Processing by UsersController#basic_info as HTML
+  [1m[35mUser Load (28.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (8.9ms)
+Rendered users/basic_info.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 720ms (Views: 51.5ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/activities_interests" for 127.0.0.1 at 2011-06-20 10:54:24 +0500
+  Processing by UsersController#activities_interests as HTML
+  [1m[35mUser Load (16.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Rendered users/_edit_profile_sections.html.erb (6.2ms)
+Rendered users/activities_interests.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 467ms (Views: 31.5ms | ActiveRecord: 16.5ms)
