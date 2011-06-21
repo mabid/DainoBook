@@ -17,6 +17,18 @@
         <% end %>
       </ul>
       <table>
+        <tr>
+          <th><label for="id_username">First Name</label></th>
+          <td>
+            <%= f.text_field :first_name, :class => "text_required" %>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="id_username">Last  Name</label></th>
+          <td>
+            <%= f.text_field :last_name, :class => "text_required" %>
+          </td>
+        </tr>
         <tr><td colspan='2'></td></tr>
         <tr><th><label for="id_username">Basic Current City</label></th>
           <td>
@@ -25,7 +37,7 @@
         </tr>
         <tr><th><label for="id_password">Gender</label></th>
           <td>
-            <%= f.text_field :basic_info_gender, :class => "text_required" %>
+            <%= f.select( :basic_info_gender, { "Male" => "Male", "Female" => "Female"}) %>
           </td>
         </tr>
         <tr><th><label for="id_password">Show Gender in profile</label></th>
