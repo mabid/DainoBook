@@ -98,3 +98,34 @@ form p { position:relative }
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
+/* for side navigation bar------------------------- */
+#side_navigation {font-size:0.75em; width:150px;}
+#side_navigation ul {margin:0px; padding:0px;}
+#side_navigation li {list-style: none;}
+
+ul.top-level {background:#666;}
+ul.top-level li {
+ border-bottom: #fff solid;
+ border-top: #fff solid;
+ border-width: 1px;
+}
+
+#side_navigation a {
+ color: #fff;
+ cursor: pointer;
+ display:block;
+ height:25px;
+ line-height: 25px;
+ text-indent: 10px;
+ text-decoration:none;
+ width:100%;
+}
+#side_navigation a:hover{
+ text-decoration:underline;
+}
+
+#navigation li:hover {
+ background: #f90;
+ position: relative;
+}

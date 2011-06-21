@@ -1,7 +1,11 @@
 <% content_for :sidebar do %>
 	<%= render 'users/edit_profile_sections'%>
 <% end %>
-
+<% unless flash[:notice].blank? %>
+<div class="notice">
+  <%= flash[:notice].to_s %>
+</div>
+<% end %>
 <div id="forms-login">
 	<h2>Contact and Information</h2>
 	<div class='notice_body'>

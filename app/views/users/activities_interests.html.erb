@@ -2,7 +2,11 @@
 	<%= render 'users/edit_profile_sections'%>
 <% end %>
 
-
+<% unless flash[:notice].blank? %>
+<div class="notice">
+  <%= flash[:notice].to_s %>
+</div>
+<% end %>
 <div id="forms-login" >
         <h2>Activities and Interests</h2>
 	<div >

@@ -61,7 +61,8 @@ class UsersController < ApplicationController
         render '/profile_steps/profile_picture' and return
 			else
 					flash[:notice] = "Update Successfull"
-         redirect_to root_url and return 
+          redirect_to :back
+#         redirect_to root_url and return
       end
     else 
       if(check[:profile_picture])
@@ -71,7 +72,8 @@ class UsersController < ApplicationController
         render '/profile_steps/profile_info' and return
 			else
 					flash[:notice] = "Failed some error Occured"
-         redirect_to root_url and return 
+          redirect_to :back
+         #redirect_to root_url and return
       end
     end
   end

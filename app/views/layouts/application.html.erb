@@ -56,6 +56,7 @@
 
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <%= javascript_include_tag "libs/modernizr-1.7.min" %>
+  <%= javascript_include_tag "libs/jquery-1.5.1.min.js" %>
 
 </head>
 
@@ -92,8 +93,7 @@
 					<nav>
 						<ul>
 							<li> <%= link_to "Profile", user_friends_path(current_user) , :class => is_mainnav_active?(user_friends_path(current_user) ) %> </li>
-							<%#*<li> <%= link_to "Edit", :edit_profile , :class => is_mainnav_active?(:edit_profile)%> </li>%>
-                                                        <li> <%= link_to "Edit", :basic_info , :class => is_mainnav_active?(:edit_profile)%> </li>
+							<li> <%= link_to "Edit", :basic_info , :class => is_mainnav_active?(:edit_profile)%> </li>
                                                         <li> <%= link_to "Friends", user_friends_path(current_user) %> </li>
                                                         <li> <%= link_to "Search", '/search/people' %> </li>
                                                         <li> <%= link_to "Invite Friends", :invite_friends%> </li>
@@ -133,7 +133,7 @@
   </div> <!-- eo #container -->
 
   <%#*<script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>%>
-  <%= javascript_include_tag "libs/jquery-1.5.1.min.js" %>
+  
 
   <!-- scripts concatenated and minified via ant build script-->
   <%= javascript_include_tag "plugins" %>

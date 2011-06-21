@@ -1,19 +1,32 @@
-Current Friends:
-<br />
-<div>
-<%= render :partial => 'friends/friends' %>
-</div>
-<br />
-<br />
-<div>
-Requested Friends:
-<br />
-<%= render :partial => 'friends/requested_friends' %>
-</div>
-<br />
-<br />
-<div>
-Pending Friends:
-<br />
-<%= render :partial => 'friends/pending_friends' %>
-</div>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td nowrap="nowrap">
+      <h2>Current Friends:</h2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= render :partial => 'friends/friends' %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h2>Requested Friends:</h2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= render :partial => 'friends/requested_friends' %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h2>Pending Friends:</h2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= render :partial => 'friends/pending_friends' %>
+    </td>
+  </tr>
+</table>

@@ -3,7 +3,7 @@
 <div style="float:left;">
 <% @user.friends.each do |u| %>
   <div style="width:200;float:left;">
-<%= image_tag u.profile_picture.url(:small) %>
+<%= image_tag u.profile_picture.url(:thumb) %>
 <div>
 	<strong><%= u.full_name %> </strong> <br/>
 	Since <%= u.created_at.to_s(:long) %>
