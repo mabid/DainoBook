@@ -1,41 +1,59 @@
-<%= javascript_include_tag "jquery" %>
-<script type="text/javascript">
- $(document).ready(function() {
-	$(".invite-friend").click(function(event){
-				index = $(this).attr('info').value;
-				email = $("#email"+index).value;
-				name = $("#name_"+index).value;
-				params = 'email='+email+'&name='+name;
-				event.preventDefault();	
-				$.ajax({
-					data: params,
-					url: 'import_contacts/invite',
-					type: "POST",
-					complete: function(){
-						alert("friend invited");
-					}
-					});
-				
-			}
+<script type="text/javascript">$(document).ready( function() {
+		$(".invite-friend").click( function(event) {
+			index = $(this).attr('info');
+			email = $("#email_"+index).val();
+			name = $("#name_"+index).val();
+			params = 'email='+email+'&name='+name;
+			event.preventDefault();
+			$.ajax({
+				data: params,
+				url: '/import_contacts/invite',
+				type: "POST",
+				complete: function() {
+					alert("An invitation has been sent to " + email);
+					$('#invitee_'+index).hide();
+				}
+			});
+
+		}
 		);
-	});
-</script>
-Already on DainoBook
-<br />
-<% for i in @users%>
-	<input type="checkbox" name="email[]" id="email_<%= i.full_name %>" value="<%= i.full_name %>" /><%= i.full_name %><br>
-<% unless i == current_user || current_user.requested_friends.include?(i) || current_user.friends.include?(i) || current_user.pending_friends.include?(i) %>
-<% form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => i.id)) do |f| %>
-<%= submit_tag "Add to My Friends" %>
-<% end %>
-<% end %>
+	});</script>
+
+<% content_for :sidebar do %>
+	<h3> </h3>
 <% end %>
 
-<br />
-Not on DainoBook <br />
+<h1> Expand your friend's circle by adding new ones </h1>
+
+<p> We've found your friends already on the network </p>
+
+<% for i in @users%>
+	<div id="<%=i.id%>">
+		<!-->
+		<input type="checkbox" name="email[]" id="email_<%= i.full_name %>" value="<%= i.full_name %>"/>
+		-->
+		
+		<% form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => i.id)) do |f| %>
+			<%= submit_tag "Add Friend" %>
+			<%= image_tag i.profile_picture.url(:thumb), :height => '32', :width => '32' %>
+			<%= i.full_name %>
+		<% end %>
+	</div>
+<% end %>
+
+<hr/>
+
+<p> 
+	Following people have not joined the Dainobook. You can send them an invite to be friends with you on the most awesome shocial network
+</p>
+
 <% @no_users.each_with_index do |i, index|%>
-	<input type='hidden' id='name_<%=index%>' value='<%= i[:name] %>' />
-	<input type='hidden' id = 'email_<%=index%>' value='<%= i[:email]%>' />
-	<input type="checkbox" name="email[]" id="email_<%= i[:email] %>" value="<%= i[:email] %>" /><%= i %><br>
-	<input class="invite-friend" type="button" value="Invite" info="<%= index %>" id="invite-contact" />
+	<div id="invitee_<%= index%>">
+		<input class="invite-friend" type="button" value="Invite" info="<%= index %>" id="invite-contact" />
+		<input type='hidden' id='name_<%= index%>' value='<%= i[:name] %>' />
+		<input type='hidden' id = 'email_<%= index%>' value='<%= i[:email]%>' />
+		<!-- <input type="checkbox" name="email[]" id="email_<%= i[:email] %>" value="<%= i[:email] %>" /> -->
+		<%= i[:name].blank? ? "" : i[:name] + "-" %> <strong> <%= i[:email] %> </strong>
+	</div>
+	<br/>
 <% end %>

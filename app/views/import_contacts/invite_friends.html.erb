@@ -1,19 +1,29 @@
+<h2> Invite Friends </h2>
+<p> Search friends on Dainobook and invite them if they haven't already joined. As simple as 1-2-3</p>
+<small> The password provided is never stored on our servers </small>
+
+<p>
 <% form_tag :action => 'import', :id => @user do %>
+	<% unless flash[:error].blank? %>
+		<div id="error">
+			<%= flash[:error].to_s %>
+		</div>
+	<% end %>	
 
 	<select name="from" id="from">
-		<option value="">Select Id</option>
-		<option value="gmail">Gmail</option>
-		<option value="yahoo">Yahoo</option>
+		<option value="gmail">GMail</option>
+		<option value="yahoo">Yahoo! </option>
 		<option value="hotmail">Hotmail</option>
 	</select>
 
 	<BR />
 	<p>Please Enter Your Email Address Below : <BR />
-	<input type="text" name="login"></p>
+	<input type="text" name="login"/></p>
 	<p>Enter Your Password :<BR />
-	<input type="password" name="password"></p>
+	<input type="password" name="password"/></p>
 
-	<p><h4>Note : we are not going to save your Password anywhere </h4></p>
+	
 	<p><%= submit_tag 'Find My Friends' %>
 
 <% end %>
+</p>

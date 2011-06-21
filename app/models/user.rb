@@ -31,7 +31,8 @@ class User < ActiveRecord::Base
     self.last_name = self.last_name.capitalize
   end
   
-  
-
+  def profile_pic_small
+    self.profile_picture.thumb
+  end
   
 end
