@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :is_mainnav_active?
+
+  def is_mainnav_active?(page_name)
+    "mainnav-selected" if params[:action]==page_name
+    #"mainnav-selected"
+  end
 
   def logged_in?
     current_user

@@ -1,13 +1,13 @@
 <% content_for :sidebar do %>
 	<%= render 'users/edit_profile_sections'%>
 <% end %>
-
-<div class='notice_blue' id="forms-login" style="width:350px;">
-	<div class='notice_head' id="right-pane-head">
-		<div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
-		</div>
-
-		<h2>Contact and Information</h2></div>
+<% unless flash[:notice].blank? %>
+<div class="notice">
+  <%= flash[:notice].to_s %>
+</div>
+<% end %>
+<div id="forms-login">
+	<h2>Contact and Information</h2>
 	<div class='notice_body'>
 		<%= form_for(@user) do |f| %>
 			<ul>
@@ -19,47 +19,47 @@
 				<tr><td colspan='2'></td></tr>
 				<tr><th><label for="id_username">Email</label></th>
 					<td>
-						<%= f.text_field :email, :class => "text required email", :style=>"width: 140px;" %>
+						<%= f.text_field :email, :class => "text_required" %>
 					</td>
 				</tr>
 				<tr><th><label for="id_password">MSN IM</label></th>
 					<td>
-						<%= f.text_field :im_screen_name, :class => "text required", :style=>"width: 140px;" %>
+						<%= f.text_field :im_screen_name, :class => "text_required" %>
 					</td>
 				</tr>
 				<tr><th><label for="id_password">Phone #</label></th>
 					<td>
-						<%= f.text_field :phones, :class => "text required", :style=>"width: 140px;" %>
+						<%= f.text_field :phones, :class => "text_required" %>
 					</td>
 				</tr>
 				<tr><th><label for="id_password">Address #</label></th>
 					<td>
-						<%= f.text_field :address, :class => "text required", :style=>"width: 140px;" %>
+						<%= f.text_field :address, :class => "text_required" %>
 					</td>
 				</tr>
 				<tr><th><label for="id_password">City/Town</label></th>
 					<td>
-						<%= f.text_field :city_town, :class => "text required", :style=>"width: 140px;" %>
+						<%= f.text_field :city_town, :class => "text_required"%>
 					</td>
 				</tr>
 				<tr><th><label for="id_password">Zip</label></th>
 					<td>
-						<%= f.text_field :zip, :class => "text required", :style=>"width: 140px;" %>
+						<%= f.text_field :zip, :class => "text_required" %>
 					</td>
 				</tr>
 				<tr><th><label for="id_password">Neighborhood</label></th>
 					<td>
-						<%= f.text_field :neighborhood, :class => "text required", :style=>"width: 140px;" %>
+						<%= f.text_field :neighborhood, :class => "text_required" %>
 					</td>
 				</tr>
 				<tr><th><label for="id_password">Website</label></th>
 					<td>
-						<%= f.text_field :website, :class => "text required", :style=>"width: 140px;" %>
+						<%= f.text_field :website, :class => "text_required" %>
 					</td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><%= f.submit "Save", :class => "blue-button" %>
+					<td><%= f.submit "Save" %>
 					</td>
 				</tr>
 

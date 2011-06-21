@@ -74,11 +74,11 @@
                   <div class="grid_6"> <img src="/images/daino.png" width="52px" height="52px" alt="logo"/>
                           <img src="images/dblogo.png" alt="Daino Logo"/> </div>
 			<div class="grid_6" id="signin" >
-                          <form action=""  method="post">
+                          <form action="/user_sessions"  method="post">
 					<fieldset class="credentials">
 						<div align="left">
 							<input id="username" type="text" autocomplete="on" placeholder="Username" name="user_session[email]" />
-							<input id="password" type="password" autocomplete="on" placeholder="Password" name="session[password]" value="" />
+							<input id="password" type="password" autocomplete="on" placeholder="Password" name="user_session[password]" value="" />
 							<button> Sign in </button>
 						</div>
 					</fieldset>
@@ -113,9 +113,9 @@
     			<fieldset>
     				<div> <%= f.text_field :first_name, :placeholder => 'First Name' %> </div>
     				<div> <%= f.text_field :last_name, :placeholder => 'Last Name' %>   </div>
-    				<div> <input type="text" id="email" name="user[email]"  placeholder="Email"/> </div>
-    				<div> <input type="text" id="password" name="user[password]"  placeholder="Password" />     </div>
-    				<div> <input type="text" id="confirmpassword" name="user[password_confirmation]"  placeholder="Confirm Password" /> </div>
+    				<div> <%= f.text_field :email, :placeholder => 'Email' %> </div>
+    				<div> <%= f.password_field :password, :placeholder => 'Password' %></div>
+    				<div> <%= f.password_field :password_confirmation, :placeholder => 'Confirm Password' %></div>
     				<div align="right"> <button> Sign Up! </button> </div>
     			</fieldset>
     			<% end %>

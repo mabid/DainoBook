@@ -3,19 +3,26 @@
 <div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
 </div>
 <div class='notice_body'>
-	<% @users.each do |user| %>
-  <div style="width:200;float:left;">
-<%= image_tag user.profile_picture.url(:small) %>
-<div><strong><%= user.full_name %> </strong></div>
-<% unless user == current_user || current_user.requested_friends.include?(user) || current_user.friends.include?(user) || current_user.pending_friends.include?(user) %>
-<% form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => user.id)) do |f| %>
-<%= submit_tag "Add to My Friends" %>
-<% end %>
-<% end %>
-</div>
-	<% end %>
+  <table border="0" cellpadding="0" cellspacing="0" >
+    <% @users.each do |user| %>
+    <tr>
+      <td  nowrap="nowrap">
+          <%= image_tag user.profile_picture.url(:thumb) %>
+      </td>
+      <td nowrap="nowrap">
+          <strong><%= user.full_name %> </strong>
+      </td>
+      <td nowrap="nowrap">
+          <% unless user == current_user || current_user.requested_friends.include?(user) || current_user.friends.include?(user) || current_user.pending_friends.include?(user) %>
+          <% form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => user.id)) do |f| %>
+          <%= submit_tag "Add to My Friends" %>
+          <% end %>
+          <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
 </div>
 
-</div>
 </div>
 </div>

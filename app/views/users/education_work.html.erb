@@ -2,12 +2,13 @@
 	<%= render 'users/edit_profile_sections'%>
 <% end %>
 
-
+<% unless flash[:notice].blank? %>
+<div class="notice">
+  <%= flash[:notice].to_s %>
+</div>
+<% end %>
 <div class='notice_blue' id="forms-login" style="width:350px;">
 	<div class='notice_head' id="right-pane-head">
-		<div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
-		</div>
-
 
 		<h2>Education And Work</h2></div>
 	<div class='notice_body'>
