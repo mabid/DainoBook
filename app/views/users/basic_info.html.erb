@@ -30,7 +30,7 @@
           </td>
         </tr>
         <tr><td colspan='2'></td></tr>
-        <tr><th><label for="id_username">Basic Current City</label></th>
+        <tr><th><label for="id_username">Current City</label></th>
           <td>
             <%= f.text_field :basic_current_city, :class => "text_required" %>
           </td>
@@ -57,12 +57,12 @@
         </tr>
         <tr><th><label for="id_password">Interested in</label></th>
           <td>
-            <%= f.text_field :basic_info_interested_in, :class => "text_required" %>
+            <%= f.select( :basic_info_interested_in, { "Dating" => "Dating", "Bussiness" => "Bussiness", "Anything"=>"Anything"}) %>
           </td>
         </tr>
         <tr><th><label for="id_password">About Me</label></th>
           <td>
-            <%= f.text_field :basic_info_about_me, :class => "text_required" %>
+            <%= f.text_area :basic_info_about_me, :class => "text_required" %>
           </td>
         </tr>
         <tr><td></td><td><%= f.submit "Save" %>
