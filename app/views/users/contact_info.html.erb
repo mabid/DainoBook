@@ -6,10 +6,16 @@
   <%= flash[:notice].to_s %>
 </div>
 <% end %>
+
+<script type="text/javascript">
+  
+ 
+</script>
+
 <div id="forms-login">
 	<h2>Contact and Information</h2>
 	<div class='notice_body'>
-		<%= form_for(@user) do |f| %>
+		<%= form_for(@user) do |f|   %>
 			<ul>
 				<% @user.errors.full_messages.each do |msg| %>
 					<li><%= msg %></li>
@@ -17,19 +23,24 @@
 			</ul>
 			<table>
 				<tr><td colspan='2'></td></tr>
-				<tr><th><label for="id_username">Email</label></th>
-					<td>
-						<%= f.text_field :email, :class => "text_required" %>
-					</td>
-				</tr>
 				<tr><th><label for="id_password">MSN IM</label></th>
 					<td>
 						<%= f.text_field :im_screen_name, :class => "text_required" %>
 					</td>
 				</tr>
+				<tr><th><label for="id_password">Gmail IM</label></th>
+					<td>
+						<%= f.text_field :im_gmail_screen_name, :class => "text_required" %>
+					</td>
+				</tr>
+				<tr><th><label for="id_password">Skype IM</label></th>
+					<td>
+						<%= f.text_field :im_skype_screen_name, :class => "text_required" %>
+					</td>
+				</tr>
 				<tr><th><label for="id_password">Phone #</label></th>
 					<td>
-						<%= f.text_field :phones, :class => "text_required" %>
+						<%= f.text_field :phones, :class => "text_required" %> (+xxxxxxxx)
 					</td>
 				</tr>
 				<tr><th><label for="id_password">Address #</label></th>
@@ -47,7 +58,7 @@
 						<%= f.text_field :zip, :class => "text_required" %>
 					</td>
 				</tr>
-				<tr><th><label for="id_password">Neighborhood</label></th>
+				<tr><th><label for="id_password">Country</label></th>
 					<td>
 						<%= f.text_field :neighborhood, :class => "text_required" %>
 					</td>

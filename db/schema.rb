@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612193447) do
+ActiveRecord::Schema.define(:version => 20110621210633) do
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(:version => 20110612193447) do
     t.string   "zip"
     t.string   "neighborhood"
     t.string   "website"
+    t.string   "im_gmail_screen_name"
+    t.string   "im_skype_screen_name"
   end
 
 end
