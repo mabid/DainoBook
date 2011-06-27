@@ -1,7 +1,11 @@
 Facebook::Application.routes.draw do |map|
 
 	resources :users do
+		map.user_photos 'user_photos', :controller => 'albums', :action => 'index'
 		resources :friends
+		resources :albums do
+			resources :photos
+		end
 	end
 
 	resources :user_sessions
@@ -19,9 +23,6 @@ Facebook::Application.routes.draw do |map|
   map.edit_profile 'edit_profile', :controller => 'users', :action => 'edit_profile'
   map.profile_pic 'profile_pic', :controller => 'users', :action => 'profile_pic'
   map.invite_friends 'invite_friends', :controller => 'import_contacts', :action => 'invite_friends'
-
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
 
 	map.import_google '/import/google',   :controller => "import_contacts", :action => 'import_google_contacts'
 	map.import_live   '/import/live',     :controller => "import_contacts", :action => 'import_live_contacts'

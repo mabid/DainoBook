@@ -1,0 +1,19 @@
+	<script type="text/javascript">
+  $(document).ready(function(){  
+      $('.photoTag').photoTag({  
+          requesTagstUrl: '/tags',  
+          deleteTagsUrl: '/tags/delete_tag',  
+          addTagUrl: '/tags/add_tag',  
+          parametersForNewTag: {  
+              name: {  
+                  parameterKey: 'name',  
+                  isAutocomplete: true,  
+                  autocompleteUrl: '/search/tags',  
+                  label: 'Name'  
+              }  
+          }  
+      });  
+  });  
+</script>
+
+<%= image_tag(@photo.picture.url(:original), :class => "photoTag imageId_#{@photo.id}")%>

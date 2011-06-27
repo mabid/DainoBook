@@ -1,0 +1,18 @@
+<div class='notice_blue' id="forms-login" style="width:700px;">
+	<div class='notice_head' id="right-pane-head">
+		<div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
+	Your Albums
+	<a href="<%= new_user_album_path(current_user) %>" > Add An Album </a>
+	<div class='notice_body'>
+	<% @albums.each do |album| %>
+	<div style="width:200;float:left;">
+	<%= image_tag album.cover_photo %>
+	<div><a href="<%=user_album_path(current_user,album) %>" ><strong><%= album.name%> (<%= album.location%>)</strong></a></div>
+		
+	</div>
+	<% end %>
+	</div>
+
+	</div>
+	</div>
+</div>

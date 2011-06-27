@@ -1,0 +1,18 @@
+<div class='notice_blue' id="forms-login" style="width:700px;">
+	<div class='notice_head' id="right-pane-head">
+		<div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
+	<strong>Album Name : <%= @album.name %></strong>
+	<strong>Location : <%= @album.location %></strong>
+<a href="<%= new_user_album_photo_path(current_user, @album) %>">	<strong>Upload</strong></a>
+	<div class='notice_body'>
+	<% @album.photos.each do |photo| %>
+	<div style="width:200;float:left;">
+<a href="<%= user_album_photo_path(current_user, @album.id, photo.id) %>"	><%= image_tag photo.picture.url(:small) %> </a>
+	<div><strong><%= photo.caption %> </strong></div>
+	</div>
+	<% end %>
+	</div>
+
+	</div>
+	</div>
+</div>

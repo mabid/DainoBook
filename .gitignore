@@ -3,3 +3,7 @@ db/*.sqlite3
 log/*.log
 tmp/
 nbproject/
+tmp/*
+Gemfile.lock
+.project
+db/schema.rb

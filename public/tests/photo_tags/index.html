@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+	  	<title>jquery.phototag.js</title>
+		<script src="../../libraries/jquery.dev.1.5.1.js" type="text/javascript"></script>
+		<script src="../../libraries/jquery.ui.1.8.11.js" type="text/javascript"></script>
+		<script src="../../js/jquery.phototag.test.js" type="text/javascript"></script>
+		<script src="../../libraries/blackbird/blackbird.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="../../libraries/qunit.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../libraries/jquery-ui-1.8.11.custom.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../libraries/blackbird/blackbird.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="../../libraries/qunit.js"></script>
+			
+		<script type="text/javascript">
+		
+		QUnit.testStart = function(name){
+			$('#testContent').html('<div><a id="externalLink" href="#" class="addTag">External add tag link</a></div><img id="image1" class="photoTag userId_25 imageId_150 albumId_200" src="monkeys2.jpg"/>');
+		}
+
+		$(document).ready(function(){
+			
+			module('Request tags details');
+			
+			test('Request tags',function(){
+				$('.photoTag').photoTag();
+				stop();
+				setTimeout(function(){
+					start();
+					ok($('.photoTag-tag').length>0,'At least some tag was created');
+					equals($('#photoTag-wrap_150 .photoTag-tag').length,3,'Ok, now we have three tags for the image 150');					
+					$('#photoTag-wrap_150 .photoTag-tag').each(function(i){
+						var image = $('#image1');
+						var imagePosition = image.position();
+						var tagPosition = $(this).position();
+						var isInsidePositionX = ((imagePosition.left + image.width()) > tagPosition.left > imagePosition.left);
+						var isInsidePositionY = ((imagePosition.top + image.height()) > tagPosition.top > imagePosition.top);
+						var isInside = isInsidePositionX && isInsidePositionY;		
+						ok(isInside,"Tag " + i + " is inside the image");
+						ok($(this).html()!="","Tag" + i + " has some text inside");
+					});
+				},600);
+			});
+			
+			module('Delete tags');
+			
+			test('Using tag button',function(){
+				$('.photoTag').photoTag();
+				stop();
+				setTimeout(function(){
+					start();
+					$('#photoTag-tag_200 .photoTag-delete').trigger('click');
+					equals($('#photoTag-tag_200 .photoTag-delete').length,0,"Tag 200 removed");
+					equals($('#photoTag-taglist_150 .photoTag-delete[href=#200]').length,0,"Tag 200 removed from list");
+				},600);
+			});
+			
+			test('Using remove after tag description',function(){
+				$('.photoTag').photoTag();
+				stop();
+				setTimeout(function(){
+					start();
+					$('#photoTag-taglist_150 .photoTag-delete[href=#200]').trigger('click');
+					equals($('#photoTag-tag_200').length,0,"Tag 200 removed");
+					equals($('#photoTag-taglist_150 .photoTag-delete[href=#200]').length,0,"Tag 200 removed from list");
+				},600);
+			});
+			
+			module('Adding tags');
+			
+			test('Prepare to add tag, hiding tags',function(){	
+				$('.photoTag').photoTag();
+				stop();
+				setTimeout(function(){
+					start();
+					expect(4);
+					$('#photoTag-add_150').trigger('click');
+					var hidden = false;
+					$('#photoTag-wrap_150 .photoTag-tag:hidden').each(function(i){
+						hidden = true;
+						ok(true, 'Tag ' + i + ' is hidden');
+					});
+					ok(hidden, 'Great! All of them are hidden');
+				},600);
+			});
+			
+			test('Add tag from external link',function(){
+				var options = {
+					externalAddTagLinks: {
+						bind: true,
+						selector: ".addTag"
+					}
+				};
+				$('.photoTag').photoTag(options);
+				stop();
+				setTimeout(function(){
+					start();
+					expect(2);
+					$('#externalLink').trigger('click');
+					equals($('#photoTag-add_150').length,0,"No add tag link added automatically");
+					equals($('#photoTag-tag_temp').length,1,"Great! We have our temp tag clicking on an external link");
+				},600);
+			});
+			
+			module('Clear');
+			test('Clear tests',function(){
+				var options = {
+					externalAddTagLinks: {
+						bind: true,
+						selector: ".addTag"
+					}
+				};
+				$('.photoTag').photoTag(options);
+				//$('.photoTag').photoTag();
+				ok(true,'Clear');
+			});
+
+		});
+		
+		
+		</script>
+	</head>
+	<body>
+		<h1 id="qunit-header">jquery.phototag.js</h1>
+		<h2 id="qunit-banner"></h2>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests"></ol>
+		<div style="padding-top:15px;">
+			<h3>Dependencies</h2>
+			<ul>
+				<li>JQuery 1.5.1</li>
+				<li>JQuery UI 1.8.11 (UI Core,Draggable,Resizable)</li>
+				<li>For resizing: jquery-ui-1.8.11.custom.css</li>
+				<li>For autocomplete: JQuery UI 1.8.11 (Autocomplete)</li>
+			</ul>
+		</div>
+		<div id="testContent" style="padding-top:20px; border:3px gray solid"></div>
+	</body>
+</html>
