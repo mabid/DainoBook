@@ -28,6 +28,20 @@ $(function() {
 
 		}
 	);
+
+	$("#post_video").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: '/wall/video',
+			data: "video[url]="+$("#video").val(),
+			success: function(data){
+				alert(data);
+			},
+			dataType: 'json'
+		});
+
+		}
+	);
 });
 
 
@@ -47,12 +61,17 @@ $(function() {
 		<input type="button" value="Post Status" id="post_status" />
 	</div>
 	<div id="link-div"> 
-		<input type="text" style="display:block;" name="link[url]" id="link" />
+		<input type="text" style="display:block;" name="link[url]" id="link" />	
 		<input type="button" value="Post Link" id="post_link" />
 	</div>
-	<div id="photo-div" style="display:none;" > 
-		<input type="text" name="" id="status" />
-		<input type="button" value="Post Status" id="post_status" />
+	<div id="video-div"> 
+		<input type="text" style="display:block;" name="video[url]" id="video" />	
+		<input type="button" value="Post Video" id="post_video" />
+	</div>
+	<div id="photo-div"> 
+		<%= form_tag('/wall/photo', :multipart => true) %>
+		 <label for="file">File to Upload</label> <%= file_field_tag "picture" %>
+			<%= submit_tag %>
 	</div>
 </div>
 </div>

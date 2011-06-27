@@ -7,6 +7,12 @@ class User < ActiveRecord::Base
 	has_many :friendships, :dependent => :destroy
 	has_many :tags
 	has_many :albums
+	has_many :activities
+
+	
+	def wall
+		Activity.where(:friend_id => self.id)	
+	end
 
   scope :search_by_term, lambda{|term| {:conditions => ["lower(first_name) LIKE ?", "#{term.downcase}"]} }
 

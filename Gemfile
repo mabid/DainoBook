@@ -10,6 +10,7 @@ gem 'authlogic'
 gem 'paperclip'
 gem 'hpricot'
 gem 'contacts'
+gem 'acts_as_commentable'
 #gem "contacts_rails",:git => "git://github.com/dcrec1/contacts_rails.git"
 
 # Use unicorn as the web server
