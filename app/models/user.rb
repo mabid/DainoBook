@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
 
   scope :search_by_term, lambda{|term| {:conditions => ["lower(first_name) LIKE ?", "#{term.downcase}"]} }
 
+	def self.author(author)
+    where(:author => author)
+  end
+
   has_attached_file :profile_picture,
     :styles => {
     :thumb=> "100x100#",
@@ -20,4 +24,11 @@ class User < ActiveRecord::Base
   def full_name
     self.first_name.capitalize + ' ' + self.last_name.capitalize
   end
+
+	def for_tag
+		{ :id => self.id,
+			:name => self.full_name,
+			:label => self.full_name
+		}
+	end
 end

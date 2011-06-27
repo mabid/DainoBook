@@ -126,10 +126,11 @@
 			if( $.isFunction(options.manageError) )
 				response.manageError(response);
 			else{
-				if(response.message)
-					alert(response.message);
-				else
-					alert(options.literals.communicationProblem);
+				if(response.message){
+			//		alert(response.message);
+				}
+				else{
+					alert(options.literals.communicationProblem);}
 			}	
 		};
 		

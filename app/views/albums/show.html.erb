@@ -7,7 +7,7 @@
 	<div class='notice_body'>
 	<% @album.photos.each do |photo| %>
 	<div style="width:200;float:left;">
-	<%= image_tag photo.picture.url(:small) %>
+<a href="<%= user_album_photo_path(current_user, @album.id, photo.id) %>"	><%= image_tag photo.picture.url(:small) %> </a>
 	<div><strong><%= photo.caption %> </strong></div>
 	</div>
 	<% end %>

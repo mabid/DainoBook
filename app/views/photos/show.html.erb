@@ -16,5 +16,4 @@
   });  
 </script>
 
-<%= image_tag(@photo.picture.url(:original), :class => "photoTag add_tag_photo")%>
-<a id="photoTag-add_100" href="#" class="addTag">Add </a>
+<%= image_tag(@photo.picture.url(:original), :class => "photoTag imageId_#{@photo.id}")%>

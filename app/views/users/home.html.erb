@@ -1,3 +1,37 @@
+<script type="text/javascript">
+
+$(function() {
+	$("#post_status").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: '/wall/status',
+			data: "status[text]="+$("#status").val(),
+			success: function(data){
+				alert(data);
+			},
+			dataType: 'json'
+		});
+
+		}
+	);
+
+	$("#post_link").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: '/wall/link',
+			data: "link[url]="+$("#link").val(),
+			success: function(data){
+				alert(data);
+			},
+			dataType: 'json'
+		});
+
+		}
+	);
+});
+
+
+</script>
 <div class='notice_blue' id="forms-login" style="width:350px;">
 <div class='notice_head' id="right-pane-head">
 <div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
@@ -7,6 +41,20 @@
 <%= image_tag current_user.profile_picture.url(:small) %>
 </div>
 <strong>Welcome <%= current_user.full_name %> </strong></div>
+<div id="publish_bar" >
+	<div id="status-div"> 
+		<input type="text" name="status[text]" id="status" />
+		<input type="button" value="Post Status" id="post_status" />
+	</div>
+	<div id="link-div"> 
+		<input type="text" style="display:block;" name="link[url]" id="link" />
+		<input type="button" value="Post Link" id="post_link" />
+	</div>
+	<div id="photo-div" style="display:none;" > 
+		<input type="text" name="" id="status" />
+		<input type="button" value="Post Status" id="post_status" />
+	</div>
+</div>
 </div>
 </div>
 </div>

@@ -9,7 +9,7 @@
 				event.preventDefault();	
 				$.ajax({
 					data: params,
-					url: 'import_contacts/invite',
+					url: '/import_contacts/invite',
 					type: "POST",
 					complete: function(){
 						alert("friend invited");

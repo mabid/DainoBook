@@ -10,4 +10,28 @@ class Photo < ActiveRecord::Base
 		:original => ""},
     :url => "/:class/:attachment/:id/:style_:basename.:extension" ,
     :default_url => "/:class/:attachment/missing.jpg"
+	
+	def json_tags
+		tags = []
+		self.tags.each do |tag|
+			tags << tag.for_json	
+		end	
+		{
+		:Image =>  [
+			{
+			:id => self.id,
+			:Tags => tags
+			}
+		],
+		:options => {
+			:literals => {
+				:removeTag => "Remove tag"
+			},
+			:tag => {
+				:flashAfterCreation => true
+			}
+		}
+	}.to_json
+	end
+
 end

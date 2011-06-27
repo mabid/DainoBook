@@ -24,9 +24,6 @@ Facebook::Application.routes.draw do |map|
   map.profile_pic 'profile_pic', :controller => 'users', :action => 'profile_pic'
   map.invite_friends 'invite_friends', :controller => 'import_contacts', :action => 'invite_friends'
 
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-
 	map.import_google '/import/google',   :controller => "import_contacts", :action => 'import_google_contacts'
 	map.import_live   '/import/live',     :controller => "import_contacts", :action => 'import_live_contacts'
 	map.import_yahoo  '/import/yahoo',    :controller => "import_contacts", :action => 'import_yahoo_contacts'

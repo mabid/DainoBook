@@ -12,7 +12,7 @@ class AlbumsController < ApplicationController
 
 	def create
 		current_user.albums.create(params[:album])
-		render :text => "album created"
+		redirect_to user_albums_path(current_user)
 	end
 
 	def new
