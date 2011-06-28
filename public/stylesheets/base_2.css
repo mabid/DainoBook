@@ -129,3 +129,37 @@ ul.top-level li {
  background: #f90;
  position: relative;
 }
+
+.feed_left_column{
+  width: 55px;
+  padding-top: 5px;
+}
+
+.down_border{
+    border-bottom: solid 1px #CCCCCC ;
+}
+
+.feed_text{
+    font-size: 11px;
+}
+
+.comments_div{
+    background-color: #C8C8C8;
+}
+
+.comment_down_border{
+    border-bottom: solid 1px #CCCCCC ;
+}
+
+.comment_left_column{
+    width: 25px;
+    padding-top: 2px;
+}
+
+.comment_text{
+    font-size: 10px;
+}
+
+.comment_text_area{
+    width: 300px;
+}

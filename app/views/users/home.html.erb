@@ -7,8 +7,12 @@ $(function() {
 			url: '/wall/status',
 			data: "status[text]="+$("#status").val(),
 			success: function(data){
-				alert(data);
+				 alert("Status posted successfully");
 			},
+                        error : function(jqXHR, textStatus, errorThrown){
+                          var msg = "Error occured in posting status\n";
+                          errorHandler(msg, textStatus, errorThrown);
+                        },
 			dataType: 'json'
 		});
 
@@ -21,8 +25,12 @@ $(function() {
 			url: '/wall/link',
 			data: "link[url]="+$("#link").val(),
 			success: function(data){
-				alert(data);
+                            alert("Link posted successfully");
 			},
+                       error : function(jqXHR, textStatus, errorThrown){
+                          var msg = "Error occured in posting link\n";
+                          errorHandler(msg, textStatus, errorThrown);
+                        },
 			dataType: 'json'
 		});
 
@@ -30,32 +38,170 @@ $(function() {
 	);
 });
 
+function errorHandler(msg, textStatus, errorThrown){
+      var msg = "Error occured in posting link\n";
+      if(typeof textStatus != "undefined" ){
+        msg = msg + textStatus;
+      }
+      if(typeof errorThrown != "undefined"){
+        msg = msg + errorThrown;
+      }
+      alert(msg);
+}
+
+function showPostDiv(divName){
+  $('#statusDiv').hide();
+  $('#photoDiv').hide();
+  $('#linkDiv').hide();
+  $('#videoDiv').hide();
+
+  $('#'+divName+'Div').show('slow');
+
+}
+
+function showCommentDiv(activityId){
+  var actDiv = $('#comments_div_'+activityId);
+
+  if(actDiv.is(":hidden")){
+    actDiv.show('fast');
+  }
+  else{
+    actDiv.hide('fast');
+  }
+}
 
 </script>
-<div class='notice_blue' id="forms-login" style="width:350px;">
-<div class='notice_head' id="right-pane-head">
-<div style="float: left; vertical-align: bottom; padding-top: 9px; padding-right: 8px;">
-</div>
-<div class='notice_body'>
-  <div >
-<%= image_tag current_user.profile_picture.url(:small) %>
-</div>
-<strong>Welcome <%= current_user.full_name %> </strong></div>
+<% content_for :sidebar do %>
+	<%= render 'users/home_sidebar'%>
+<% end %>
+
 <div id="publish_bar" >
-	<div id="status-div"> 
-		<input type="text" name="status[text]" id="status" />
-		<input type="button" value="Post Status" id="post_status" />
-	</div>
-	<div id="link-div"> 
-		<input type="text" style="display:block;" name="link[url]" id="link" />
-		<input type="button" value="Post Link" id="post_link" />
-	</div>
-	<div id="photo-div" style="display:none;" > 
-		<input type="text" name="" id="status" />
-		<input type="button" value="Post Status" id="post_status" />
-	</div>
+  
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="2">
+          <form action="" method="post">
+          <div >
+          Post :
+          <input type="radio" name="postchoice" value="status" onclick="showPostDiv('status')" checked="checked"/>Status &nbsp;
+          <input type="radio" name="postchoice" value="photo" onclick="showPostDiv('photo')" />Photo &nbsp;
+          <input type="radio" name="postchoice" value="link" onclick="showPostDiv('link')" />Link &nbsp;
+          <input type="radio" name="postchoice" value="video" onclick="showPostDiv('video')" />Video &nbsp;
+        </div>
+          <div id="statusDiv" >
+                  <input type="text" name="status[text]" id="status" />
+                  <input type="button" value="Post Status" id="post_status" />
+          </div>
+          <div id="photoDiv" style="display: none;">
+                  <input type="file" name="photoFile" id="photoFile" />
+                  <input type="button" value="Post Photo" id="post_file" />
+          </div>
+          <div id="linkDiv" style="display: none;">
+                  <input type="text" name="link[url]" id="link" />
+                  <input type="button" value="Post Link" id="post_link" />
+          </div>
+          <div id="videoDiv" style="display:none;" >
+                  <input type="text" name="videoFile" id="videoFile" />
+                  <input type="button" value="Post Video" id="post_video" />
+          </div>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td class="down_border feed_left_column">
+          <img src="<%=  current_user.profile_picture.url(:small) %>" width="50px"alt="profilepic"/>
+        </td>
+        <td class="down_border">
+          <p><strong> User Name </strong></p>
+          <p class="feed_text"> This is a status message </p>
+          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('activityId')"> comment</a></p>
+          <p>
+          <div id="comments_div_activityId" class="comments_div" style="display:none;">
+            <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="comment_down_border comment_left_column">
+                <img src="<%=  current_user.profile_picture.url(:small) %>" width="20px"alt="profilepic"/>
+              </td>
+               <td class="comment_down_border comment_text">
+                 <strong>Username :</strong> This is a comment
+               </td>
+            </tr>
+            <tr>
+              <td class="comment_down_border comment_left_column">
+                <img src="<%=  current_user.profile_picture.url(:small) %>" width="20px"alt="profilepic"/>
+              </td>
+               <td class="comment_down_border comment_text">
+                 <strong>Username :</strong> This is a 2nd comment
+               </td>
+            </tr>
+            <tr>
+              <td class="comment_down_border comment_left_column">
+                <img src="<%=  current_user.profile_picture.url(:small) %>" width="20px"alt="profilepic"/>
+              </td>
+               <td class="comment_down_border comment_text">
+                 <form action="comment_submit_page" method="post">
+                   <input type="hidden" name="activity_id" value="<activity_id>"/>
+                   <textarea name="comment" id="comment_area_activityId" class="comment_text_area"></textarea>
+                    <p/><input type="submit" value="Comment" />
+                 </form>
+               </td>
+            </tr>
+            </table>
+          </div>
+          </p>
+        </td>
+      </tr>
+       <tr>
+        <td class="down_border feed_left_column">
+          <img src="<%=  current_user.profile_picture.url(:small) %>" width="50px"alt="profilepic"/>
+        </td>
+        <td class="down_border">
+          <p><strong> User Name </strong> shared a video:</p>
+          <p class="feed_text"> <strong><a href="video link" target="_blank"> youtube - video title /name </a></strong> </p>
+          <p> you tube video comes here with fixed width of 250px </p>
+          <p> <a>like</a> &nbsp; <a>comment</a></p>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="down_border feed_left_column">
+          <img src="<%=  current_user.profile_picture.url(:small) %>" width="50px"alt="profilepic"/>
+        </td>
+        <td class="down_border">
+          <p><strong> User Name </strong> shared a link:</p>
+          <p class="feed_text"> <strong><a href="link" target="_blank"> link page title </a></strong> </p>
+          <p> <a>like</a> &nbsp; <a>comment</a></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="down_border feed_left_column">
+          <img src="<%=  current_user.profile_picture.url(:small) %>" width="50px"alt="profilepic"/>
+        </td>
+        <td class="down_border">
+          <p><strong> User Name </strong> posted a photo:</p>
+          <p class="feed_text"> 
+            <a href="link to photo page"><img src="<%=  current_user.profile_picture.url(:thumb) %>" /> </a>
+          </p>
+          <p> <a>like</a> &nbsp; <a>comment</a></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="down_border feed_left_column">
+          <img src="<%=  current_user.profile_picture.url(:small) %>" width="50px"alt="profilepic"/>
+        </td>
+        <td class="down_border">
+          <p>
+            <strong> User Name </strong>
+            uploaded a photos to album:
+            <a href="link to album page"><strong>Album name</strong></a>
+          </p>
+          <p class="feed_text">
+            <a href="link to photo page"><img src="<%=  current_user.profile_picture.url(:thumb) %>" /> </a>
+          </p>
+          <p> <a>like</a> &nbsp; <a>comment</a></p>
+        </td>
+      </tr>
+
+    </table>
 </div>
-</div>
-</div>
-<%#*</div>%>
 
