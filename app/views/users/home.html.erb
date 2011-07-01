@@ -36,6 +36,19 @@ $(function() {
 
 		}
 	);
+		$("#post_video").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: '/wall/video',
+			data: "video[url]="+$("#video").val(),
+			success: function(data){
+				alert(data);
+			},
+			dataType: 'json'
+		});
+
+		}
+	);
 });
 
 function errorHandler(msg, textStatus, errorThrown){

@@ -10,13 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110621210633) do
+
+ActiveRecord::Schema.define(:version => 20110627174435) do
 
   create_table "activities", :force => true do |t|
     t.integer  "item_id"
     t.string   "item_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "friend_id"
   end
 
   create_table "albums", :force => true do |t|
@@ -27,6 +30,21 @@ ActiveRecord::Schema.define(:version => 20110621210633) do
     t.datetime "updated_at"
     t.integer  "user_id"
   end
+
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
@@ -120,6 +138,12 @@ ActiveRecord::Schema.define(:version => 20110621210633) do
     t.string   "website"
     t.string   "im_gmail_screen_name"
     t.string   "im_skype_screen_name"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
