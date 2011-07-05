@@ -1,3 +1,16 @@
-<br />
-Photo<br />
-<%= photo.item.to_json %>
+      <tr>
+        <td class="down_border feed_left_column">
+          <img src="<%=  photo.user.profile_picture.url(:small) %>" width="50px"alt="profilepic"/>
+        </td>
+        <td class="down_border">
+          <p><strong> <%= photo.user.full_name %></strong> posted a photo:</p>
+          <p class="feed_text"> 
+            <a href="link to photo page"><img src="<%=  photo.item.picture.url(:thumb) %>" /> </a>
+
+          </p>
+          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=photo.id%>')"> comment</a></p>
+          <p>
+		<%= render(:partial => "feed/comments", :locals=>{:status=>photo}).html_safe%>
+          </p>
+        </td>
+      </tr>

@@ -1,0 +1,8 @@
+            <tr>
+              <td class="comment_down_border comment_left_column">
+                <img src="<%=  comment.user.profile_picture.url(:small) %>" width="20px"alt="profilepic"/>
+              </td>
+               <td class="comment_down_border comment_text">
+                 <strong><%=comment.user.full_name  %>:</strong> <%= comment.comment %> 
+               </td>
+            </tr>

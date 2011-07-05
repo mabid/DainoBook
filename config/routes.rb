@@ -1,6 +1,7 @@
 Facebook::Application.routes.draw do |map|
 
 	resources :users do
+		resource :wall, :controller => 'wall'
 		map.user_photos 'user_photos', :controller => 'albums', :action => 'index'
 		resources :friends
 		resources :albums do

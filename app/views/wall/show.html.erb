@@ -1,0 +1,159 @@
+<script type="text/javascript">
+
+function errorHandler(msg, textStatus, errorThrown){
+      var msg = "Error occured in posting link\n";
+      if(typeof textStatus != "undefined" ){
+        msg = msg + textStatus;
+      }
+      if(typeof errorThrown != "undefined"){
+        msg = msg + errorThrown;
+      }
+      alert(msg);
+}
+
+function showPostDiv(divName){
+  $('#statusDiv').hide();
+  $('#photoDiv').hide();
+  $('#linkDiv').hide();
+  $('#videoDiv').hide();
+
+  $('#'+divName+'Div').show('slow');
+
+}
+
+function showCommentDiv(activityId){
+  var actDiv = $('#comments_div_'+activityId);
+
+  if(actDiv.is(":hidden")){
+    actDiv.show('fast');
+  }
+  else{
+    actDiv.hide('fast');
+  }
+}
+function postComment(activity_id){
+
+		$.ajax({
+			type: 'POST',
+			url: '/wall/comment',
+			data: "activity_id="+activity_id+"&comment="+$("#comment_area_"+activity_id).val(),
+			success: function(data){
+				 alert("Status posted successfully");
+				window.location.reload();	
+			},
+                        error : function(jqXHR, textStatus, errorThrown){
+                          var msg = "Error occured in posting status\n";
+                          errorHandler(msg, textStatus, errorThrown);
+                        },
+			dataType: 'json'
+		});
+
+
+}
+$(function() {
+	var wall_id = $("#wall_user_id").val();
+	$("#post_status").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: '/wall/user_status',
+			data: "wall_user_id="+wall_id+"&status[text]="+$("#status").val(),
+			success: function(data){
+				 alert("Status posted successfully");
+				
+				window.location.reload();	
+			},
+                        error : function(jqXHR, textStatus, errorThrown){
+                          var msg = "Error occured in posting status\n";
+                          errorHandler(msg, textStatus, errorThrown);
+                        },
+			dataType: 'json'
+		});
+
+		}
+	);
+
+	$("#post_link").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: '/wall/link',
+			data: "wall_user_id="+wall_id+"&link[url]="+$("#link").val(),
+			success: function(data){
+                            alert("Link posted successfully");
+
+				window.location.reload();	
+			},
+                       error : function(jqXHR, textStatus, errorThrown){
+                          var msg = "Error occured in posting link\n";
+                          errorHandler(msg, textStatus, errorThrown);
+                        },
+			dataType: 'json'
+		});
+
+		}
+	);
+		$("#post_video").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: '/wall/video',
+			data: "wall_user_id="+wall_id+"&video[url]="+$("#video").val(),
+			success: function(data){
+				alert(data);
+
+				window.location.reload();	
+			},
+			dataType: 'json'
+		});
+
+		}
+	);
+});
+
+</script>
+<% content_for :sidebar do %>
+<div style="padding: 5px;" >
+  <div style="text-align: center">
+    <%= image_tag @wall_user.profile_picture.url(:small) %>
+  </div>
+  <br/>
+  <strong><%= @wall_user.full_name %> </strong>
+</div>
+<% end %>
+<div id="publish_bar" >
+  
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="2">
+          <div >
+          Post :
+          <input type="radio" name="postchoice" value="status" onclick="showPostDiv('status')" checked="checked"/>Status &nbsp;
+          <input type="radio" name="postchoice" value="photo" onclick="showPostDiv('photo')" />Photo &nbsp;
+          <input type="radio" name="postchoice" value="link" onclick="showPostDiv('link')" />Link &nbsp;
+          <input type="radio" name="postchoice" value="video" onclick="showPostDiv('video')" />Video &nbsp;
+        </div>
+          <div id="statusDiv" >
+                  <input type="text" name="status[text]" id="status" />
+                  <input type="button" value="Post Status" id="post_status" />
+          </div>
+          <div id="photoDiv" style="display: none;">
+		<%= form_tag "/wall/photo", :multipart => true do %>
+                  <input type="file" name="picture" id="photoFile" />
+<input type="hidden" name="wall_user_id" id="wall_user_id" value="<%= @wall_user_id %>" />
+                  <input type="submit" value="Post Photo" id="post_file" />
+		<% end %>
+          </div>
+          <div id="linkDiv" style="display: none;">
+                  <input type="text" name="link[url]" id="link" />
+                  <input type="button" value="Post Link" id="post_link" />
+          </div>
+          <div id="videoDiv" style="display:none;" >
+                  <input type="text" name="video[url]" id="video" />
+                  <input type="button" value="Post Video" id="post_video" />
+          </div>
+        </td>
+      </tr>
+<% @activities.each do |activity| %>
+<%= render_activity(activity).html_safe %>
+<%end%>
+    </table>
+</div>
+

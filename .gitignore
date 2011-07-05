@@ -8,4 +8,6 @@ Gemfile.lock
 .project
 db/schema.rb
 db/*
+facebook_development
+.DS_Store
 public/

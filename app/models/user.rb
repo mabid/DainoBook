@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
 	
 	def wall
-		Activity.where(:friend_id => self.id)	
+		Activity.where(:friend_id => self.id).order("created_at DESC");
 	end
 
   scope :search_by_term, lambda{|term| {:conditions => ["lower(first_name) LIKE ?", "#{term.downcase}"]} }

@@ -1,3 +1,14 @@
-<br />
-Status <br />
-<%= status.item.to_json %>
+      <tr>
+        <td class="down_border feed_left_column">
+          <img src="<%=  status.user.profile_picture.url(:small) %>" width="50px"alt="profilepic"/>
+        </td>
+        <td class="down_border">
+          <p><strong> <%= status.user.full_name %></strong></p>
+          <p class="feed_text"> <%= status.item.text %></p>
+          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=status.id%>')"> comment</a></p>
+          <p>
+		<%= render(:partial => "feed/comments", :locals=>{:status=>status}).html_safe%>
+          </p>
+        </td>
+      </tr>
+       <tr>

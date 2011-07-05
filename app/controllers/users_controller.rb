@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
   
   def home
+	redirect_to user_wall_path(current_user)
   end
 
   def new
