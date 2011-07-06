@@ -8,7 +8,7 @@
           <p> 
 <iframe width="560" height="349" src="<%= video.item.embed_url %>" frameborder="0" allowfullscreen></iframe>
 </p>
-          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=video.id%>')"> comment</a></p>
+          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=video.id%>')"> comment(<%=video.comments.count%>)</a></p>
           <p>
 		<%= render(:partial => "feed/comments", :locals=>{:status=>video}).html_safe%>
           </p>

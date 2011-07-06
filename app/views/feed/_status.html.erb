@@ -5,7 +5,7 @@
         <td class="down_border">
           <p><strong> <%= status.user.full_name %></strong></p>
           <p class="feed_text"> <%= status.item.text %></p>
-          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=status.id%>')"> comment</a></p>
+          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=status.id%>')"> comment(<%=status.comments.count%>)</a></p>
           <p>
 		<%= render(:partial => "feed/comments", :locals=>{:status=>status}).html_safe%>
           </p>

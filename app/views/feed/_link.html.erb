@@ -5,7 +5,7 @@
         <td class="down_border">
           <p><strong> <%= link.user.full_name %></strong> shared a link:</p>
           <p class="feed_text"> <strong><a href="link" target="_blank"> <%= link.item.url %></a></strong> </p>
-          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=link.id%>')"> comment</a></p>
+          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=link.id%>')"> comment(<%=link.comments.count%>)</a></p>
           <p>
 		<%= render(:partial => "feed/comments", :locals=>{:status=>link}).html_safe%>
           </p>

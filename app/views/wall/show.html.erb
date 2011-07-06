@@ -38,7 +38,7 @@ function postComment(activity_id){
 			url: '/wall/comment',
 			data: "activity_id="+activity_id+"&comment="+$("#comment_area_"+activity_id).val(),
 			success: function(data){
-				 alert("Status posted successfully");
+				 //alert("Status posted successfully");
 				window.location.reload();	
 			},
                         error : function(jqXHR, textStatus, errorThrown){
@@ -58,7 +58,7 @@ $(function() {
 			url: '/wall/user_status',
 			data: "wall_user_id="+wall_id+"&status[text]="+$("#status").val(),
 			success: function(data){
-				 alert("Status posted successfully");
+				//alert("Status posted successfully");
 				
 				window.location.reload();	
 			},
@@ -78,9 +78,9 @@ $(function() {
 			url: '/wall/link',
 			data: "wall_user_id="+wall_id+"&link[url]="+$("#link").val(),
 			success: function(data){
-                            alert("Link posted successfully");
+                            //alert("Link posted successfully");
 
-				window.location.reload();	
+                            window.location.reload();
 			},
                        error : function(jqXHR, textStatus, errorThrown){
                           var msg = "Error occured in posting link\n";
@@ -97,7 +97,7 @@ $(function() {
 			url: '/wall/video',
 			data: "wall_user_id="+wall_id+"&video[url]="+$("#video").val(),
 			success: function(data){
-				alert(data);
+				//alert(data);
 
 				window.location.reload();	
 			},

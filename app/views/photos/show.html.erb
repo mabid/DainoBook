@@ -15,5 +15,5 @@
       });  
   });  
 </script>
-
+<a href="<%=user_album_path(current_user,@photo.album)%>" >Back to album</a>
 <%= image_tag(@photo.picture.url(:original), :class => "photoTag imageId_#{@photo.id}")%>

@@ -5,10 +5,10 @@
         <td class="down_border">
           <p><strong> <%= photo.user.full_name %></strong> posted a photo:</p>
           <p class="feed_text"> 
-            <a href="link to photo page"><img src="<%=  photo.item.picture.url(:thumb) %>" /> </a>
+            <a href="<%=  photo.item.picture.url(:original) %>" target="_blank"><img src="<%=  photo.item.picture.url(:thumb) %>" /> </a>
 
           </p>
-          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=photo.id%>')"> comment</a></p>
+          <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=photo.id%>')"> comment(<%=photo.comments.count%>)</a></p>
           <p>
 		<%= render(:partial => "feed/comments", :locals=>{:status=>photo}).html_safe%>
           </p>
