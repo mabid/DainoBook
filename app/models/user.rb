@@ -54,4 +54,15 @@ class User < ActiveRecord::Base
 			:label => self.full_name
 		}
 	end
+  
+  def wall_activities
+    ids = self.id.to_s + ","
+    self.friends.each do |f|
+      ids = ids + f.id.to_s + ","
+    end
+    ids[ids.length-1]=''
+    puts "\n\n"+ids+"\n\n"
+		Activity.where("friend_id IN (?)",ids.split(",").collect{ |s| s.to_i }).order("created_at DESC");
+	end
+  
 end

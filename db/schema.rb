@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110627174435) do
+ActiveRecord::Schema.define(:version => 20110712174423) do
 
   create_table "activities", :force => true do |t|
     t.integer  "item_id"
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(:version => 20110627174435) do
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "edit_profiles", :force => true do |t|
+    t.string   "profile_activity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"

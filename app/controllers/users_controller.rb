@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
   
   def home
-	redirect_to user_wall_path(current_user)
+	redirect_to user_path(current_user)
   end
 
   def new
@@ -55,6 +55,9 @@ class UsersController < ApplicationController
   def update
     check = params[:user]
     if current_user.update_attributes(params[:user])
+      profile_activity = EditProfile.new(:profile_activity => " updated His/Her Profile")
+      profile_activity.activity = Activity.new(:friend_id => current_user.id, :user_id => current_user.id)
+      profile_activity.save
       @user = current_user
       if(check[:profile_picture])
          redirect_to root_url and return 
@@ -83,8 +86,8 @@ class UsersController < ApplicationController
   def edit
   end
     
-#  def show
-#    
-#  end
+  def show
+    @activities = current_user.wall_activities
+  end
 
 end
