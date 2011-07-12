@@ -96,13 +96,14 @@
 				<% else %>
 				<div class="grid_8">
 					<nav>
-						<ul>
-							<li> <%= link_to "Profile", :root , :class => is_mainnav_active?(user_friends_path(current_user) ) %> </li>
+						<ul>    
+                                                        <li> <%= link_to "Home", :root , :class => is_mainnav_active?(user_friends_path(current_user) ) %> </li>
+							<li> <%= link_to "Profile", user_wall_path(current_user) , :class => is_mainnav_active?(user_friends_path(current_user) ) %> </li>
 							<li> <%= link_to "Edit", :basic_info , :class => is_mainnav_active?(:edit_profile)%> </li>
                                                         <li> <%= link_to "Friends", user_friends_path(current_user) %> </li>
                                                         <li> <%= link_to "Search", '/search/people' %> </li>
                                                         <li> <%= link_to "Invite Friends", :invite_friends%> </li>
-                                                        <li> <%= link_to "Photos", :user_photos%> </li>
+                                                        <li> <%= link_to "Photos", :user_photos %> </li>
                                                         <li> <%= link_to "Logout", :logout%> </li>
 						</ul>
 					</nav>

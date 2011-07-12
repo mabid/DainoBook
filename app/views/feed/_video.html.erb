@@ -6,7 +6,7 @@
           <p><strong> <%= video.user.full_name %></strong> shared a video:</p>
           <p class="feed_text"> <strong><a href="video link" target="_blank"> youtube - video title /name </a></strong> </p>
           <p> 
-<iframe width="560" height="349" src="<%= video.item.embed_url %>" frameborder="0" allowfullscreen></iframe>
+<iframe width="320" height="240" src="<%= video.item.embed_url %>" frameborder="0" allowfullscreen></iframe>
 </p>
           <p> <a>like</a> &nbsp; <a href="javascript:void(0)" onclick="showCommentDiv('<%=video.id%>')"> comment(<%=video.comments.count%>)</a></p>
           <p>
