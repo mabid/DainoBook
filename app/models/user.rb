@@ -18,8 +18,9 @@ class User < ActiveRecord::Base
 
 	
 	def wall
-		Activity.where(:friend_id => self.id).order("created_at DESC");
+		Activity.where({:place_id => self.id, :place_type => 'User'}).order("created_at DESC");
 	end
+	has_and_belongs_to_many :groups
 
   scope :search_by_term, lambda{|term| {:conditions => ["lower(first_name) LIKE ?", "#{term.downcase}"]} }
 
@@ -61,8 +62,7 @@ class User < ActiveRecord::Base
       ids = ids + f.id.to_s + ","
     end
     ids[ids.length-1]=''
-    puts "\n\n"+ids+"\n\n"
-		Activity.where("friend_id IN (?)",ids.split(",").collect{ |s| s.to_i }).order("created_at DESC");
+		Activity.where("place_id IN (?)",ids.split(",").collect{ |s| s.to_i }).order("created_at DESC");
 	end
   
 end

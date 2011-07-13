@@ -1,0 +1,21 @@
+
+<% content_for :sidebar do %>
+  <div style="padding: 5px;" >
+    <div style="text-align: center">
+      <%= image_tag current_user.profile_picture.url(:small) %>
+    </div>
+    <br/>
+    <strong><%= current_user.full_name %> </strong>
+  </div>
+<% end %>
+<%= form_for(@group) do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %>
+  <%= f.submit %>
+  <br />
+  <div id="add_friends_div">
+    <%= render :partial => 'groups/add_friends_group' %>
+  </div>
+<% end %>
+<br />
+

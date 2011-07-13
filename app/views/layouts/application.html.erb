@@ -29,7 +29,8 @@
   <%= stylesheet_link_tag "960" %>
   <%= stylesheet_link_tag "text" %>
   <%= stylesheet_link_tag "base_2" %>
-   <link media="screen" type="text/css" href="/photo-tag/libraries/jquery-ui-1.8.11.custom.css" rel="stylesheet">
+  
+  <link media="screen" type="text/css" href="/photo-tag/libraries/jquery-ui-1.8.11.custom.css" rel="stylesheet">
    <link media="screen" type="text/css" href="/photo-tag/tests/photo_tags/styles2.css" rel="stylesheet">
 
 
@@ -103,6 +104,7 @@
                                                         <li> <%= link_to "Search", '/search/people' %> </li>
                                                         <li> <%= link_to "Invite Friends", :invite_friends%> </li>
                                                         <li> <%= link_to "Photos", :user_photos%> </li>
+                                                        <li> <%= link_to "Groups", groups_path %> </li>
                                                         <li> <%= link_to "Logout", :logout%> </li>
 						</ul>
 					</nav>

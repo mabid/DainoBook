@@ -1,0 +1,10 @@
+<br />
+<% unless current_user.friends.empty? %>
+  <div style="float:left;">
+    Add Friends to group:
+    <%= select_tag("users[]", options_for_select(current_user.friends.collect { |ff| [ff.full_name, ff.id] }, @group.users.collect { |fs| fs.id }),
+                   {:multiple=>true, :id => "functions"}) %>
+  </div>
+<% else %>
+  None
+<% end %>

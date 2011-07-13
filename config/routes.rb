@@ -11,6 +11,11 @@ Facebook::Application.routes.draw do |map|
 
 	resources :user_sessions
   resources :user_sessions
+  resources :groups do
+    member do
+      post 'remove_member'
+    end	
+  end
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   root :to => "pages#index"

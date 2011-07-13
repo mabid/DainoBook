@@ -24,27 +24,34 @@ class WallController < ApplicationController
 
 	def user_status
 		status = Status.new(params[:status])
-		status.activity = Activity.new(:friend_id => params[:wall_user_id], :user_id => current_user.id)
+		activity = Activity.new(:user_id => current_user.id)
+		activity.place = User.find(params[:wall_user_id])
+		status.activity = activity
 		status.save
 		render :json => status.to_json and return
 	end
 
 	def link 
 		link= Link.new(params[:link])
-		link.activity = Activity.new(:friend_id => params[:wall_user_id], :user_id => current_user.id)
+		activity = Activity.new(:user_id => current_user.id)
+		activity.place = User.find(params[:wall_user_id])
+		link.activity = activity
 		link.save
 		render :json => link.to_json and return 
 	end
 
 	def photo
-		act = Activity.new(:friend_id => params[:wall_user_id], :user_id => current_user.id)
-		photo = Photo.create({:activity => act, :picture => params[:picture]})
+		activity = Activity.new( :user_id => current_user.id)
+		activity.place = User.find(params[:wall_user_id])
+		photo = Photo.create({:activity => activity, :picture => params[:picture]})
 		redirect_to '/users/'+params[:wall_user_id]+"/wall"
 	end
 
 	def video
 		video = Video.new(params[:video])
-		video.activity = Activity.new(:friend_id => params[:wall_user_id], :user_id => current_user.id)
+		activity = Activity.new(:user_id => current_user.id)
+		activity.place = User.find(params[:wall_user_id])
+		video.activity = activity
 		video.save
 		render :json => video.to_json and return 
 	end

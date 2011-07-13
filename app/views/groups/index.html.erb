@@ -1,0 +1,9 @@
+Your Groups:
+<% @groups.each do |g| %>
+  <p>
+    <%= link_to g.full_name, group_path(g) %>
+    <%= button_to "Delete group", group_path(g), :method => :delete, :confirm => "Are You Sure???" %>
+  </p>
+<% end %>
+  
+<%= link_to "Create New Group", new_group_path %>

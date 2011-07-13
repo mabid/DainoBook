@@ -1,0 +1,15 @@
+<% unless @group.users.empty? %>
+<div style="float:left;">
+<% @group.users.each do |u| %>
+  <div style="width:200;float:left;margin: 0 5px 0;">
+<%= link_to image_tag(u.profile_picture.url(:thumb)), "/users/"+u.id.to_s+"/wall"%>
+<div>
+	<strong><%= u.full_name %> </strong> <br/>
+</div>
+<%#= link_to '[Remove]', user_friend_path(:user_id => current_user, :id => u), :class=>"reject-request", :method => :delete, :confirm => 'Are you sure?' %>
+</div>
+<% end %>
+</div>
+<% else %>
+None
+<% end %>
