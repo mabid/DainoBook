@@ -116,6 +116,14 @@ $(function() {
   </div>
   <br/>
   <strong><%= @wall_user.full_name %> </strong>
+  <br/><%= @wall_user.basic_info_gender %>
+  <% if @wall_user.basic_info_birthday and @wall_user.basic_info_birthday.inspect.length > 0 %> <br/><strong>Date of Birth : </strong><%= @wall_user.basic_info_birthday.inspect %><% end %>
+  <% if @wall_user.basic_current_city and @wall_user.basic_current_city.length > 0 %> <br/><strong>Lives in : </strong><%= @wall_user.basic_current_city %><%  end %>
+  <% if @wall_user.basic_info_about_me and @wall_user.basic_info_about_me.length > 0 %><br/><strong>About : </strong><%= @wall_user.basic_info_about_me %><%  end %>
+  <% if @wall_user.basic_info_interested_in and @wall_user.basic_info_interested_in.length > 0 %> <br/><strong>Interested in : </strong><%= @wall_user.basic_info_interested_in %><% end %>
+  <hr/>
+
+
 </div>
 <% end %>
 <div id="publish_bar" >

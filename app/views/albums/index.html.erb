@@ -5,8 +5,8 @@
 	<a href="<%= new_user_album_path(current_user) %>" > Add An Album </a>
 	<div class='notice_body'>
 	<% @albums.each do |album| %>
-	<div style="width:200;float:left;">
-	<%= image_tag album.cover_photo %>
+	<div style="width:200px;float:left; margin:1px; ">
+          <a href="<%=user_album_path(current_user,album) %>" ><%= image_tag album.cover_photo , :class=>'album_list'  %></a>
 	<div><a href="<%=user_album_path(current_user,album) %>" ><strong><%= album.name%> (<%= album.location%>)</strong></a></div>
 		
 	</div>

@@ -163,3 +163,7 @@ ul.top-level li {
 .comment_text_area{
     width: 300px;
 }
+
+.album_list {
+    border: 5px solid #fff;
+}

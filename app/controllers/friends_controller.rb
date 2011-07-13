@@ -51,4 +51,18 @@ class FriendsController < ApplicationController
 		@friendship2 = @friend.friendships.find_by_user_id(params[:id]).destroy
 		redirect_to user_friends_path(:user_id => current_user)
 	end
+
+#  def suggested
+#    @user = current_user
+#    suggested_friends = []
+#    current_user.friends.each do | friend |
+#      friend.friends.each do | suggested |
+#        current_user.friends.each do |check_friend|
+#          suggested_frinds << suggessted if check_friend.id == suggested.id
+#        end
+#        end
+#      end
+#      end
+#    end
+#  end
 end
