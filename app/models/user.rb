@@ -20,7 +20,8 @@ class User < ActiveRecord::Base
 	def wall
 		Activity.where({:place_id => self.id, :place_type => 'User'}).order("created_at DESC");
 	end
-	has_and_belongs_to_many :groups
+	has_many :memberships
+  has_many :groups, :through => :memberships
 
   scope :search_by_term, lambda{|term| {:conditions => ["lower(first_name) LIKE ?", "#{term.downcase}"]} }
 

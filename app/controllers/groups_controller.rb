@@ -17,9 +17,8 @@ class GroupsController < ApplicationController
 
 	def create
 		@group = Group.create(params[:group])
-    @group.users << User.find(params[:users]) unless params[:users].nil?
-    @group.users << current_user
-    @group.save!
+    @group.save
+    create_member @group,params[:users]
 		flash[:notice] = "created group"
 		redirect_to group_path(@group)
 	end
@@ -35,18 +34,21 @@ class GroupsController < ApplicationController
 
 	end
 
-	def create_member 
-		members = params[:user_ids]
-		members = members.split(",")
+	def create_member(g,users_list)
+		members = users_list
+    members << current_user.id.to_s
+#		members = members.split(",")
 		members.each do |member|
-			GroupMember.new(params[:group_id], member)
+      puts g.id.to_s + " " + member
+			mem  = Membership.create(:group_id => g.id, :user_id => member)
 		end
 		flash[:notice] = "addded all members"
-		redirect_to group_path(params[:group_id])
+#		redirect_to group_path(params[:group_id])
 	end
 
-	def remove_member 
-		GroupMember.where(:user_id => params[:user_id], :id => params[:group_id]).delete
+	def remove_member
+    puts "\n\n\n" + params.inspect + "\n\n\n"
+    Membership.delete(Membership.where("user_id = ? AND group_id = ?",params[:user_id],params[:id]))
 		flash[:notice] = "removed"
 		redirect_to group_path(params[:group_id])
 	end

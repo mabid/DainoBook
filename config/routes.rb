@@ -13,7 +13,7 @@ Facebook::Application.routes.draw do |map|
   resources :user_sessions
   resources :groups do
     member do
-      post 'remove_member'
+      get 'remove_member'
     end	
   end
   match 'login' => 'user_sessions#new', :as => :login
